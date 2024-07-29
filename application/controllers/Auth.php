@@ -5,6 +5,7 @@ class Auth extends CI_Controller
 {
     public function __construct()
     {
+        
         parent::__construct();
         $this->load->model('Mod_auth');
         $this->load->model('Mod_log');  // Load model for logging
@@ -12,8 +13,6 @@ class Auth extends CI_Controller
         $this->load->helper('url');      // Load URL helper for redirection
 
         // Log user activity
-
-        
         $this->Mod_log->log_act();
     }
 
