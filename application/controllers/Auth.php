@@ -5,7 +5,10 @@ class Auth extends CI_Controller
 {
     public function __construct()
     {
+<<<<<<< HEAD
         
+=======
+>>>>>>> c5c58ae (initial commit)
         parent::__construct();
         $this->load->model('Mod_auth');
         $this->load->model('Mod_log');  // Load model for logging
