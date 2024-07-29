@@ -13,7 +13,6 @@ class Dashboard extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
-            
             $this->load->view('admin/partials/header');
             $this->load->view('admin/partials/topbar');
             $this->load->view('admin/frontend/dashboard');

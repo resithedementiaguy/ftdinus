@@ -33,25 +33,25 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach($pi as $data): ?>
-                        <tr>
-                            <td>
-                                <?= ltrim($data['idx_pin'], '0');?>
-                            </td>
-                            <td>
-                                <?= $data['ina_cpl'] ?>
-                            </td>
-                            <td>
-                                <?= $data['ina_pin'] ?>
-                            </td>
-                            <td>
-                                <?= $data['eng_pin'] ?>
-                            </td>
-                            <td>
-                                <a class="flex items-center mr-3" href="<?= site_url('pi/edit_view/' . $data['idx_pin']) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                                <a class="flex items-center text-danger" href="<?= site_url('pi/delete/' . $data['idx_pin']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                            </td>
-                        </tr>
+                        <?php foreach ($pi as $data) : ?>
+                            <tr>
+                                <td>
+                                    <?= ltrim($data['idx_pin'], '0'); ?>
+                                </td>
+                                <td>
+                                    <?= $data['ina_cpl'] ?>
+                                </td>
+                                <td>
+                                    <?= $data['ina_pin'] ?>
+                                </td>
+                                <td>
+                                    <?= $data['eng_pin'] ?>
+                                </td>
+                                <td>
+                                    <a class="flex items-center mr-3" href="<?= site_url('pi/edit_view/' . $data['idx_pin']) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                                    <a class="flex items-center text-danger" href="<?= site_url('pi/delete/' . $data['idx_pin']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
