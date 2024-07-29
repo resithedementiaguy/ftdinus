@@ -21,7 +21,6 @@
     <script src="assets/sb-admin/vendor/jquery/jquery.min.js"></script>
 </head>
 
-<<<<<<< HEAD
 <body class="bg-gradient-primary">
     <div class="container">
         <!-- Outer Row -->
@@ -57,67 +56,6 @@
                                     </form>
                                 </div>
                             </div>
-=======
-<style>
-    .vh-100 {
-        min-height: 100vh;
-    }
-
-    .flex-center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .rounded-input {
-        border-radius: 10px;
-        padding-top: 22px;
-        padding-bottom: 22px;
-    }
-
-    .rounded-button {
-        border-radius: 10px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-</style>
-</head>
-
-<body class="bg-gradient-primary vh-100 d-flex flex-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8">
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <div class="p-5">
-                            <div class="text-center mb-4">
-                                <h4 class="h4">Selamat Datang</h4>
-                                <p class="text-gray-700">Silahkan login terlebih dahulu</p>
-                            </div>
-                            <form class="user" id="loginForm">
-                                <div id="loginError" class="alert alert-danger d-none" role="alert"></div>
-                                <div class="form-group">
-                                    <label for="inputUsername" class="form-label">Username</label>
-                                    <input type="text" class="form-control rounded-input" id="username" name="username" placeholder="Masukkan Username" />
-                                </div>
-                                <div class="form-group position-relative">
-                                    <label for="inputPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control rounded-input" id="password" name="password" placeholder="Masukkan Password" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck" />
-                                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-block rounded-button">
-                                    Login
-                                </button>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="small" id="forgotPasswordLink">Lupa Password?</a>
-                                </div>
-                            </form>
->>>>>>> c5c58ae (initial commit)
                         </div>
                     </div>
                 </div>
