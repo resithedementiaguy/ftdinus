@@ -12,6 +12,7 @@ class Auth extends CI_Controller
         $this->load->helper('url');      // Load URL helper for redirection
 
         // Log user activity
+
         
         $this->Mod_log->log_act();
     }
