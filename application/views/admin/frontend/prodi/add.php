@@ -1,9 +1,10 @@
-<div class="container-fluid"> 
-    <h4 class="title-bar"><i class="fa fa-caret-square-o-right"></i>INPUT PROGRAM STUDI</h4><hr/>
+<div class="container-fluid">
+    <h4 class="title-bar"><i class="fa fa-caret-square-o-right"></i>INPUT PROGRAM STUDI</h4>
+    <hr />
     <form action="<?php echo base_url('program_studi/create'); ?>" method="post">
         <div class="form-group">
-            <?php foreach($program_studi as $data) : ?>
-            <input type="hidden" id="idx_sfk" name="idx_sfk" class="form-control"  autocomplete="off" value="<?= $data['idx_sfk'] ?>" required>
+            <?php foreach ($program_studi as $data) : ?>
+                <input type="hidden" id="idx_sfk" name="idx_sfk" class="form-control" autocomplete="off" value="<?= $data['idx_sfk'] ?>" required>
             <?php endforeach; ?>
             <h5>Kode Program Studi</h5>
             <input type="text" id="kde_skf" name="kde_skf" class="form-control" placeholder="Kode Program Studi" autocomplete="off" required>
@@ -25,7 +26,7 @@
         </div>
         <br>
         <div class="text text-center">
-            <a href="<?= base_url('program_studi') ?>" class="btn btn-danger" >Kembali</a>
+            <a href="<?= base_url('program_studi') ?>" class="btn btn-danger">Kembali</a>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
     </form>

@@ -3,9 +3,10 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-primary font-weight-bold">Data Performa Index</h1>
+    <h6 class="h6 mb-3 text-black">Daftar semua data performa index.</h6>
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
+    <div class="card shadow-sm mb-4">
         <div class="card-header py-3">
             <div class="text-right">
                 <a href="<?= site_url('pi/create_view') ?>" class="btn btn-primary shadow-md mr-2">Tambah Data</a>
@@ -23,15 +24,6 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr class="table table-primary text-dark">
-                            <th>No</th>
-                            <th>Capaian Pembelajaran Lulusan</th>
-                            <th>Performa Index Bahasa Indonesia</th>
-                            <th>Performa Index Bahasa Inggris</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         <?php foreach ($pi as $data) : ?>
                             <tr>
@@ -58,6 +50,5 @@
             </div>
         </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->
