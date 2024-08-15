@@ -3,8 +3,9 @@
     <h6 class="h6 mb-3 text-black">Silahkan edit form capaian pembelajaran lulusan di bawah ini.</h6>
     <div class="card shadow-sm mb-4">
         <div class="card-body">
-            <form action="<?php echo base_url('cpl/update'); ?>" method="post">
-                <?php foreach ($cpl as $dcpl) : ?>
+            <?php foreach ($cpl as $dcpl) : ?>
+            <form action="<?php echo base_url('cpl/update/' . $dcpl->idx_cpl); ?>" method="post">
+                
                     <div class="form-group mb-4">
                         <h6>Program Studi</h6>
                         <select class="form-control" name="skf_cpl" id="skf_cpl" required="">
@@ -16,11 +17,11 @@
                     </div>
                     <div class="form-group mb-4">
                         <h6>Deskripsi Bahasa Indonesia</h6>
-                        <textarea id="ina_cpl" name="ina_cpl" class="form-control" placeholder="Deskripsi Bahasa Indonesia" autocomplete="off" value="<?= $dcpl->ina_cpl ?>" required></textarea>
+                        <textarea id="ina_cpl" name="ina_cpl" class="form-control" placeholder="Deskripsi Bahasa Indonesia" autocomplete="off" required><?= $dcpl->ina_cpl ?></textarea>
                     </div>
                     <div class="form-group mb-4">
                         <h6>Deskripsi Bahasa Inggris</h6>
-                        <textarea id="eng_cpl" name="eng_cpl" class="form-control" placeholder="Deskripsi Bahasa Inggris" autocomplete="off" value="<?= $dcpl->eng_cpl ?>" required></textarea>
+                        <textarea id="eng_cpl" name="eng_cpl" class="form-control" placeholder="Deskripsi Bahasa Inggris" autocomplete="off" required><?= $dcpl->eng_cpl ?></textarea>
                     </div>
                     <div class="form-group">
                         <h6>Nomor CPL</h6>

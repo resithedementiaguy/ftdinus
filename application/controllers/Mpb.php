@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Cpl extends CI_Controller
+class Mpb extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Mod_mpb');
         $this->load->model('Mod_cpl');
-        $this->load->model('Mod_skf');
         
         $this->load->model('Mod_log');  // Load model for logging
         $this->load->library('session'); // Load session library
@@ -17,23 +17,23 @@ class Cpl extends CI_Controller
         $this->Mod_log->log_act();
     }
 
-    // Tampilkan daftar program studi
+    // Tammpblkan daftar program studi
     public function index()
     {
-        $data['cpl'] = $this->Mod_cpl->get_cpl();
+        $data['mpb'] = $this->Mod_mpb->get_mpb();
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/cpl/view',$data);
+        $this->load->view('admin/frontend/mpb/view',$data);
         $this->load->view('admin/partials/footer');
     }
 
     public function create_view()
     {
+        $data['mpb'] = $this->Mod_mpb->get_mpb();
         $data['cpl'] = $this->Mod_cpl->get_cpl();
-        $data['program_studi'] = $this->Mod_skf->get_program_studi();
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/cpl/add',$data);
+        $this->load->view('admin/frontend/mpb/add',$data);
         $this->load->view('admin/partials/footer');
     }
 
@@ -43,44 +43,45 @@ class Cpl extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('skf_cpl', 'skf_cpl', 'required');
-        $this->form_validation->set_rules('ina_cpl', 'ina_cpl', 'required');
-        $this->form_validation->set_rules('eng_cpl', 'eng_cpl', 'required');
+        $this->form_validation->set_rules('skf_mpb', 'skf_mpb', 'required');
+        $this->form_validation->set_rules('smk_mpb', 'smk_mpb', 'required');
+        $this->form_validation->set_rules('mtk_mpb', 'mtk_mpb', 'required');
 
         if ($this->form_validation->run() === FALSE) {
-            redirect('cpl/create_view');
+            redirect('mpb/create_view');
         } else {
             $data = array(
-                'skf_cpl' => $this->input->post('skf_cpl'),
-                'ina_cpl' => $this->input->post('ina_cpl'),
-                'eng_cpl' => $this->input->post('eng_cpl'),
-                'nmr_cpl' => $this->input->post('nmr_cpl')
+                'skf_mpb' => $this->input->post('skf_mpb'),
+                'smk_mpb' => $this->input->post('smk_mpb'),
+                'mtk_mpb' => $this->input->post('mtk_mpb'),
+                'rps_mpb' => $this->input->post('rps_mpb'),
+                'pbh_mpb' => $this->input->post('pbh_mpb')
             );
-            $this->Mod_cpl->add_cpl($data);
-            redirect('cpl');
+            $this->Mod_mpb->add_mpb($data);
+            redirect('mpb');
         }
     }
 
     public function edit_view($id)
     {
-        $data['cpl']=$this->Mod_cpl->get_cpl_by_id($id);
-        $data['program_studi'] = $this->Mod_skf->get_program_studi();
+        $data['mpb']=$this->Mod_mpb->get_mpb_by_id($id);
+        $data['cpl'] = $this->Mod_cpl->get_cpl();
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/cpl/edit',$data);
+        $this->load->view('admin/frontend/mpb/edit',$data);
         $this->load->view('admin/partials/footer');
     }
 
     // Edit program studi
     public function edit($id)
     {
-        $cpl = $this->Mod_cpl->get_cpl($id);
+        $mpb = $this->Mod_mpb->get_mpb($id);
 
-        if ($cpl) {
+        if ($mpb) {
             // Mengatur header untuk JSON
             $this->output
                 ->set_content_type('application/json')
-                ->set_output(json_encode($cpl));
+                ->set_output(json_encode($mpb));
         } else {
             // Jika tidak ditemukan, berikan respons yang sesuai
             $this->output
@@ -92,19 +93,19 @@ class Cpl extends CI_Controller
 
     public function update($id)
     {
-        
         $data = array(
-            'skf_cpl' => $this->input->post('skf_cpl'),
-            'ina_cpl' => $this->input->post('ina_cpl'),
-            'eng_cpl' => $this->input->post('eng_cpl'),
-            'nmr_cpl' => $this->input->post('nmr_cpl')
+            'skf_mpb' => $this->input->post('skf_mpb'),
+            'smk_mpb' => $this->input->post('smk_mpb'),
+            'mtk_mpb' => $this->input->post('mtk_mpb'),
+            'rps_mpb' => $this->input->post('rps_mpb'),
+            'pbh_mpb' => $this->input->post('pbh_mpb')
         );
 
-        if ($this->Mod_cpl->update_cpl($id, $data)) {
+        if ($this->Mod_mpb->update_mpb($id, $data)) {
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
-                redirect('cpl');
+                redirect('mpb');
         } else {
             $this->output
                 ->set_status_header(500)
@@ -116,7 +117,7 @@ class Cpl extends CI_Controller
     // Hapus program studi
     public function delete($id)
     {
-        $this->Mod_cpl->delete_cpl($id);
-        redirect('cpl');
+        $this->Mod_mpb->delete_mpb($id);
+        redirect('mpb');
     }
 }

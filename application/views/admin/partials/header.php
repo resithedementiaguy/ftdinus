@@ -85,6 +85,34 @@
                     <span>Performa Index</span></a>
             </li>
 
+            <!-- Nav Item - RPS -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'rps' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('rps') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>RPS</span></a>
+            </li>
+
+            <!-- Nav Item - MPB -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'mpb' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('mpb') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>MPB</span></a>
+            </li>
+
+            <!-- Nav Item - CPM -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'cpm' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('cpm') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>CPM</span></a>
+            </li>
+
+            <!-- Nav Item - MTK -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'mtk' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('mtk') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Mata Kuliah</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

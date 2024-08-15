@@ -87,9 +87,9 @@ class Program_studi extends CI_Controller
         }
     }
 
-    public function update()
+    public function update($id)
     {
-        $id = $this->input->post('idx_skf');
+        
         $data = array(
             'kde_skf' => $this->input->post('kde_skf'),
             'jr2_skf' => $this->input->post('jr2_skf'),
@@ -100,6 +100,7 @@ class Program_studi extends CI_Controller
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
+                redirect('program_studi');
         } else {
             $this->output
                 ->set_status_header(500)

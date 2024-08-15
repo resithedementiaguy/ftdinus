@@ -3,8 +3,9 @@
     <h6 class="h6 mb-3 text-black">Silahkan edit form program studi di bawah ini.</h6>
     <div class="card shadow-sm mb-4">
         <div class="card-body">
-            <form action="<?php echo base_url('program_studi/update'); ?>" method="post">
-                <?php foreach ($program_studi as $data) : ?>
+        <?php foreach ($program_studi as $data) : ?>
+            <form action="<?php echo base_url('program_studi/update/' . $data->idx_skf); ?>" method="post">
+                
                     <div class="form-group mb-4">
                         <h6>Kode Program Studi</h6>
                         <input type="text" id="kde_skf" name="kde_skf" class="form-control" placeholder="Kode Program Studi" autocomplete="off" value="<?= $data->kde_skf ?>" required>

@@ -43,18 +43,18 @@ class Pi extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('kde_skf', 'Kode Program Studi', 'required');
-        $this->form_validation->set_rules('jr2_skf', 'Nama Program Studi', 'required');
-        $this->form_validation->set_rules('jjg_skf', 'Jenjang Program Studi', 'required');
+        $this->form_validation->set_rules('ina_pin', 'ina_pin', 'required');
+        $this->form_validation->set_rules('eng_pin', 'eng_pin', 'required');
+        $this->form_validation->set_rules('nmr_pin', 'nmr_pin', 'required');
 
         if ($this->form_validation->run() === FALSE) {
             redirect('pi/create_view');
         } else {
             $data = array(
-                'sfk_skf' => $this->input->post('idx_sfk'),
-                'kde_skf' => $this->input->post('kde_skf'),
-                'jr2_skf' => $this->input->post('jr2_skf'),
-                'jjg_skf' => $this->input->post('jjg_skf')
+                'cpl_pin' => $this->input->post('cpl_pin'),
+                'ina_pin' => $this->input->post('ina_pin'),
+                'eng_pin' => $this->input->post('eng_pin'),
+                'nmr_pin' => $this->input->post('nmr_pin')
             );
             $this->Mod_pi->add_pi($data);
             redirect('pi');
@@ -90,19 +90,21 @@ class Pi extends CI_Controller
         }
     }
 
-    public function update()
+    public function update($id)
     {
-        $id = $this->input->post('idx_skf');
+        
         $data = array(
-            'kde_skf' => $this->input->post('kde_skf'),
-            'jr2_skf' => $this->input->post('jr2_skf'),
-            'jjg_skf' => $this->input->post('jjg_skf')
+            'cpl_pin' => $this->input->post('cpl_pin'),
+            'ina_pin' => $this->input->post('ina_pin'),
+            'eng_pin' => $this->input->post('eng_pin'),
+            'nmr_pin' => $this->input->post('nmr_pin')
         );
 
         if ($this->Mod_pi->update_pi($id, $data)) {
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
+                redirect('pi');
         } else {
             $this->output
                 ->set_status_header(500)
