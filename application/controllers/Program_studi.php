@@ -112,7 +112,26 @@ class Program_studi extends CI_Controller
     // Hapus program studi
     public function delete($id)
     {
-        $this->Mod_skf->delete_program_studi($id);
-        redirect('program_studi');
+        date_default_timezone_set('Asia/Jakarta');
+        $dlt = date('Y-m-d H:i:s', time());
+
+        $data = array(
+            'kde_skf' => 0,
+            'jr2_skf' => 0,
+            'jjg_skf' => 0,
+            'dlt_skf' => $dlt
+        );
+
+        if ($this->Mod_skf->update_program_studi($id, $data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'success')));
+                redirect('program_studi');
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'error')));
+        }
     }
 }

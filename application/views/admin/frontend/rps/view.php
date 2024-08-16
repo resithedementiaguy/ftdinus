@@ -17,10 +17,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="table table-primary text-dark">
-                            <th>Waktu</th>
-                            <th>Kmk_nip</th>
-                            <th>Kmk_sid</th>
-                            <th>Kmk_vld</th>
+                            <th>Matakuliah</th>
+                            <th>kpt_vld</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -28,20 +26,14 @@
                         <?php foreach ($rps as $data) : ?>
                             <tr>
                                 <td>
-                                    <?= $data['wkt_rps'] ?>
+                                    <?= $data->smk_nma ?>
                                 </td>
                                 <td>
-                                    <?= $data['kmk_nip'] ?>
+                                    <?= $data->kpr_vld ?>
                                 </td>
                                 <td>
-                                    <?= $data['kmk_sid'] ?>
-                                </td>
-                                <td>
-                                    <?= $data['kmk_vld'] ?>
-                                </td>
-                                <td>
-                                    <a class="flex items-center mr-3" href="<?= site_url('rps/edit_view/' . $data['idx_rps']) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                                    <a class="flex items-center text-danger" href="<?= site_url('rps/delete/' . $data['idx_rps']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                                    <a class="flex items-center mr-3" href="<?= site_url('rps/edit_view/' . $data->idx_rps) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                                    <a class="flex items-center text-danger" href="<?= site_url('rps/delete/' . $data->idx_rps) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

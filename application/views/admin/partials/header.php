@@ -113,6 +113,13 @@
                     <span>Mata Kuliah</span></a>
             </li>
 
+            <!-- Nav Item - ST1 -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'st1' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('st1') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>S1 (ST1)</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
