@@ -5,7 +5,6 @@
         <div class="card-body">
         <?php foreach ($program_studi as $data) : ?>
             <form action="<?php echo base_url('program_studi/update/' . $data->idx_skf); ?>" method="post">
-                
                     <div class="form-group mb-4">
                         <h6>Kode Program Studi</h6>
                         <input type="text" id="kde_skf" name="kde_skf" class="form-control" placeholder="Kode Program Studi" autocomplete="off" value="<?= $data->kde_skf ?>" required>
