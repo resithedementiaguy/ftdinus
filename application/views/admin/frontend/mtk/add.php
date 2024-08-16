@@ -1,7 +1,7 @@
 <div class="container-fluid px-5">
     <h1 class="h3 mb-2 text-primary font-weight-bold">Input Mata Kuliah</h1>
     <h6 class="h6 mb-3 text-black">Silahkan input mata kuliah pada form di bawah ini.</h6>
-    <hr/>
+    <hr />
     <div class="card shadow-sm mb-4">
         <div class="card-body">
             <form action="<?php echo base_url('mtk/create'); ?>" method="post">
