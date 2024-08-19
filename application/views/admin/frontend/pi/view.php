@@ -26,6 +26,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($pi as $data) : ?>
+                            <?php if (is_null($data['dlt_pin'])): ?>
                             <tr>
                                 <td>
                                     <?= ltrim($data['idx_pin'], '0'); ?>
@@ -44,6 +45,7 @@
                                     <a class="flex items-center text-danger" href="<?= site_url('pi/delete/' . $data['idx_pin']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
+                            <?php endif;?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

@@ -116,9 +116,6 @@ class Program_studi extends CI_Controller
         $dlt = date('Y-m-d H:i:s', time());
 
         $data = array(
-            'kde_skf' => 0,
-            'jr2_skf' => 0,
-            'jjg_skf' => 0,
             'dlt_skf' => $dlt
         );
 

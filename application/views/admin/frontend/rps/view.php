@@ -24,6 +24,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($rps as $data) : ?>
+                            <?php if (is_null($data['dlt_rps'])): ?>
                             <tr>
                                 <td>
                                     <?= $data->smk_nma ?>
@@ -36,6 +37,7 @@
                                     <a class="flex items-center text-danger" href="<?= site_url('rps/delete/' . $data->idx_rps) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
+                            <?php endif;?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

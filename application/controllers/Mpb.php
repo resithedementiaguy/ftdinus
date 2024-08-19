@@ -117,7 +117,23 @@ class Mpb extends CI_Controller
     // Hapus program studi
     public function delete($id)
     {
-        $this->Mod_mpb->delete_mpb($id);
-        redirect('mpb');
+        date_default_timezone_set('Asia/Jakarta');
+        $dlt = date('Y-m-d H:i:s', time());
+
+        $data = array(
+            'dlt_mpb' => $dlt
+        );
+
+        if ($this->Mod_mpb->update_mpb($id, $data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'success')));
+                redirect('mpb');
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'error')));
+        }
     }
 }
