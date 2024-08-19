@@ -26,24 +26,18 @@
                     </thead>
                     <tbody>
                         <?php foreach ($program_studi as $data) : ?>
-                            <tr>
-                                <td>
-                                    <?= $data['kde_skf'] ?>
-                                </td>
-                                <td>
-                                    <?= $data['jns_ipt'] ?> <?= $data['nma_ipt'] ?> <?= $data['kkt_ipt'] ?>
-                                </td>
-                                <td>
-                                    <?= $data['nma_sfk'] ?>
-                                </td>
-                                <td>
-                                    <?= $data['jr2_skf'] ?> <?= $data['jjg_skf'] ?>
-                                </td>
-                                <td>
-                                    <a class="flex items-center mr-3" href="<?= site_url('program_studi/edit_view/' . $data['idx_skf']) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                                    <a class="flex items-center text-danger" href="<?= site_url('program_studi/delete/' . $data['idx_skf']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                                </td>
-                            </tr>
+                            <?php if (is_null($data['dlt_skf'])): ?>
+                                <tr>
+                                    <td><?= $data['kde_skf'] ?></td>
+                                    <td><?= $data['jns_ipt'] ?> <?= $data['nma_ipt'] ?> <?= $data['kkt_ipt'] ?></td>
+                                    <td><?= $data['nma_sfk'] ?></td>
+                                    <td><?= $data['jr2_skf'] ?> <?= $data['jjg_skf'] ?></td>
+                                    <td>
+                                        <a class="flex items-center mr-3" href="<?= site_url('program_studi/edit_view/' . $data['idx_skf']) ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                                        <a class="flex items-center text-danger" href="<?= site_url('program_studi/delete/' . $data['idx_skf']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

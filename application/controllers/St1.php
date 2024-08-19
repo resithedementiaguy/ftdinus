@@ -146,7 +146,23 @@ class St1 extends CI_Controller
     // Hapus dosen s1
     public function delete($id)
     {
-        $this->Mod_st1->delete_st1($id);
-        redirect('st1');
+        date_default_timezone_set('Asia/Jakarta');
+        $dlt = date('Y-m-d H:i:s', time());
+
+        $data = array(
+            'dlt_st1' => $dlt
+        );
+
+        if ($this->Mod_st1->update_st1($id, $data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'success')));
+            redirect('st1');
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'error')));
+        }
     }
 }

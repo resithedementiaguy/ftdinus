@@ -116,7 +116,23 @@ class Cpl extends CI_Controller
     // Hapus program studi
     public function delete($id)
     {
-        $this->Mod_cpl->delete_cpl($id);
-        redirect('cpl');
+        date_default_timezone_set('Asia/Jakarta');
+        $dlt = date('Y-m-d H:i:s', time());
+
+        $data = array(
+            'dlt_cpl' => $dlt
+        );
+
+        if ($this->Mod_cpl->update_cpl($id, $data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'success')));
+                redirect('cpl');
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'error')));
+        }
     }
 }

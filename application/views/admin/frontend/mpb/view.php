@@ -25,6 +25,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($mpb as $data) : ?>
+                            <?php if (is_null($data['dlt_mpb'])): ?>
                             <tr>
                                 <td>
                                     <?= $data['skf_mpb'] ?>
@@ -40,6 +41,7 @@
                                     <a class="flex items-center text-danger" href="<?= site_url('mpb/delete/' . $data['idx_mpb']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
+                            <?php endif;?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

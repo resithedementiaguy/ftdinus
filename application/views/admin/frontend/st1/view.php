@@ -26,6 +26,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($st1 as $data) : ?>
+                            <?php if (is_null($data['dlt_st1'])): ?>
                             <tr>
                                 <td>
                                     <?= $data['hbs_st1'] ?>
@@ -44,6 +45,7 @@
                                     <a class="flex items-center text-danger" href="<?= site_url('st1/delete/' . $data['idx_st1']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
+                            <?php endif;?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>

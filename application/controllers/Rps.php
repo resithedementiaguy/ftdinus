@@ -104,6 +104,7 @@ class Rps extends CI_Controller
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
+                redirect('rps');
         } else {
             $this->output
                 ->set_status_header(500)
@@ -115,7 +116,23 @@ class Rps extends CI_Controller
     // Hapus program studi
     public function delete($id)
     {
-        $this->Mod_rps->delete_rps($id);
-        redirect('rps');
+        date_default_timezone_set('Asia/Jakarta');
+        $dlt = date('Y-m-d H:i:s', time());
+
+        $data = array(
+            'dlt_rps' => $dlt
+        );
+
+        if ($this->Mod_rps->update_rps($id, $data)) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'success')));
+                redirect('rps');
+        } else {
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('status' => 'error')));
+        }
     }
 }
