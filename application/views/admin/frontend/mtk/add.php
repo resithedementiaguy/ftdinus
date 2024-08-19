@@ -1,60 +1,59 @@
 <div class="container-fluid px-5">
     <h1 class="h3 mb-2 text-primary font-weight-bold">Input Mata Kuliah</h1>
     <h6 class="h6 mb-3 text-black">Silahkan input mata kuliah pada form di bawah ini.</h6>
-    <hr />
     <div class="card shadow-sm mb-4">
         <div class="card-body">
             <form action="<?php echo base_url('mtk/create'); ?>" method="post">
-                <div class="form-group">
-                    <h5>Skf_kde</h5>
+                <div class="form-group mb-4">
+                    <h6>Skf_kde</h6>
                     <input type="text" id="skf_kde" name="skf_kde" class="form-control" placeholder="skf_kde" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Skf_idx</h5>
+                <div class="form-group mb-4">
+                    <h6>Skf_idx</h6>
                     <input type="text" id="smk_mtk" name="smk_mtk" class="form-control" placeholder="smk_mtk" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Skm_kde</h5>
+                <div class="form-group mb-4">
+                    <h6>Skm_kde</h6>
                     <input type="text" id="skm_kde" name="skm_kde" class="form-control" placeholder="skm_kde" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>skm_idx</h5>
+                <div class="form-group mb-4">
+                    <h6>skm_idx</h6>
                     <input type="text" id="skm_idx" name="skm_idx" class="form-control" placeholder="skm_idx" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Nama Mata Kuliah (smk_nma)</h5>
+                <div class="form-group mb-4">
+                    <h6>Nama Mata Kuliah (smk_nma)</h6>
                     <input type="text" id="skm_nma" name="skm_nma" class="form-control" placeholder="skm_nma" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Key Mata Kuliah (smk_key)</h5>
+                <div class="form-group mb-4">
+                    <h6>Key Mata Kuliah (smk_key)</h6>
                     <input type="text" id="smk_key" name="smk_key" class="form-control" placeholder="smk_key" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Kode Mata Kuliah (smk_kde)</h5>
+                <div class="form-group mb-4">
+                    <h6>Kode Mata Kuliah (smk_kde)</h6>
                     <input type="text" id="smk_kde" name="smk_kde" class="form-control" placeholder="smk_kde" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>smk_idx</h5>
+                <div class="form-group mb-4">
+                    <h6>smk_idx</h6>
                     <input type="text" id="smk_idx" name="smk_idx" class="form-control" placeholder="smk_idx" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>rmk_mtk</h5>
+                <div class="form-group mb-4">
+                    <h6>rmk_mtk</h6>
                     <input type="text" id="rmk_mtk" name="rmk_mtk" class="form-control" placeholder="rmk_mtk" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>dsk_mtk</h5>
+                <div class="form-group mb-4">
+                    <h6>dsk_mtk</h6>
                     <input type="text" id="dsk_mtk" name="dsk_mtk" class="form-control" placeholder="dsk_mtk" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>kmk_nip</h5>
+                <div class="form-group mb-4">
+                    <h6>kmk_nip</h6>
                     <input type="text" id="kmk_nip" name="kmk_nip" class="form-control" placeholder="kmk_nip" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>kmk_sid</h5>
+                <div class="form-group mb-4">
+                    <h6>kmk_sid</h6>
                     <input type="text" id="kmk_sid" name="kmk_sid" class="form-control" placeholder="kmk_sid" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>ski_sta</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_sta</h6>
                     <div class="row">
                         <div class="col-auto">
                             <div class="form-check">
@@ -70,12 +69,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <h5>ski_smt</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_smt</h6>
                     <input type="number" id="ski_smt" name="ski_smt" class="form-control" placeholder="ski_smt" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>Teori / Praktek (tpr_ski)</h5>
+                <div class="form-group mb-4">
+                    <h6>Teori / Praktek (tpr_ski)</h6>
                     <div class="row">
                         <div class="col-auto">
                             <div class="form-check">
@@ -91,8 +90,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <h5>Teori / Praktek (ski_tpr)</h5>
+                <div class="form-group mb-4">
+                    <h6>Teori / Praktek (ski_tpr)</h6>
                     <div class="row">
                         <div class="col-auto">
                             <div class="form-check">
@@ -108,20 +107,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <h5>ski_skt</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_skt</h6>
                     <input type="number" id="ski_skt" name="ski_skt" class="form-control" placeholder="ski_skt" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>ski_skp</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_skp</h6>
                     <input type="number" id="ski_skp" name="ski_skp" class="form-control" placeholder="ski_skp" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>ski_stp</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_stp</h6>
                     <input type="number" id="ski_stp" name="ski_stp" class="form-control" placeholder="ski_stp" autocomplete="off" required>
                 </div>
-                <div class="form-group">
-                    <h5>ski_idx</h5>
+                <div class="form-group mb-4">
+                    <h6>ski_idx</h6>
                     <input type="text" id="ski_idx" name="ski_idx" class="form-control" placeholder="ski_idx" autocomplete="off" required>
                 </div>
                 <br>

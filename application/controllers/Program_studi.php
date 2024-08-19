@@ -7,7 +7,7 @@ class Program_studi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mod_skf');
-        
+
         $this->load->model('Mod_log');  // Load model for logging
         $this->load->library('session'); // Load session library
         $this->load->helper('url');      // Load URL helper for redirection
@@ -22,7 +22,7 @@ class Program_studi extends CI_Controller
         $data['program_studi'] = $this->Mod_skf->get_program_studi();
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/prodi/view',$data);
+        $this->load->view('admin/frontend/prodi/view', $data);
         $this->load->view('admin/partials/footer');
     }
 
@@ -31,7 +31,7 @@ class Program_studi extends CI_Controller
         $data['program_studi'] = $this->Mod_skf->get_program_studi();
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/prodi/add',$data);
+        $this->load->view('admin/frontend/prodi/add', $data);
         $this->load->view('admin/partials/footer');
     }
 
@@ -61,10 +61,10 @@ class Program_studi extends CI_Controller
 
     public function edit_view($id)
     {
-        $data['program_studi']=$this->Mod_skf->get_program_studi_by_id($id);
+        $data['program_studi'] = $this->Mod_skf->get_program_studi_by_id($id);
         $this->load->view('admin/partials/header');
         $this->load->view('admin/partials/topbar');
-        $this->load->view('admin/frontend/prodi/edit',$data);
+        $this->load->view('admin/frontend/prodi/edit', $data);
         $this->load->view('admin/partials/footer');
     }
 
@@ -89,7 +89,7 @@ class Program_studi extends CI_Controller
 
     public function update($id)
     {
-        
+
         $data = array(
             'kde_skf' => $this->input->post('kde_skf'),
             'jr2_skf' => $this->input->post('jr2_skf'),
@@ -100,7 +100,7 @@ class Program_studi extends CI_Controller
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
-                redirect('program_studi');
+            redirect('program_studi');
         } else {
             $this->output
                 ->set_status_header(500)
@@ -126,7 +126,7 @@ class Program_studi extends CI_Controller
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => 'success')));
-                redirect('program_studi');
+            redirect('program_studi');
         } else {
             $this->output
                 ->set_status_header(500)
