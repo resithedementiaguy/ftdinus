@@ -24,7 +24,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($rps as $data) : ?>
-                            <?php if (is_null($data['dlt_rps'])): ?>
+                            <?php if (is_null($data->dlt_rps)): ?>
                             <tr>
                                 <td>
                                     <?= $data->smk_nma ?>

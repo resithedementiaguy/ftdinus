@@ -26,6 +26,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($mtk as $data) : ?>
+                            <?php if (is_null($data['dlt_mtk'])): ?>
                             <tr>
                                 <td>
                                     <?= $data['smk_kde'] ?>
@@ -44,6 +45,7 @@
                                     <a class="flex items-center text-danger" href="<?= site_url('mtk/delete/' . $data['idx_mtk']) ?>" onclick="return confirm('Yakin Hapus')"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                 </td>
                             </tr>
+                            <?php endif;?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
