@@ -3,9 +3,8 @@
     <h6 class="h6 mb-3 text-black">Silahkan edit form performa index di bawah ini.</h6>
     <div class="card shadow-sm mb-4">
         <div class="card-body">
-        <?php foreach ($pi as $data) : ?>
-            <form action="<?php echo base_url('pi/update/' . $data->idx_pin); ?>" method="post">
-                
+            <?php foreach ($pi as $data) : ?>
+                <form action="<?php echo base_url('pi/update/' . $data->idx_pin); ?>" method="post">
                     <div class="form-group mb-4">
                         <h6>Capaian Pemebelajaran Lulusan</h6>
                         <select class="form-control" name="cpl_pin" id="cpl_pin" required="">
@@ -31,7 +30,7 @@
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 <?php endforeach; ?>
-            </form>
+                </form>
         </div>
     </div>
 </div>
