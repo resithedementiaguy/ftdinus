@@ -16,7 +16,6 @@
         </div>
     </div>
 
-    
     <section id="basic-horizontal-layouts">
         <div class="row match-height">
             <div class="col-md-12 col-12">
