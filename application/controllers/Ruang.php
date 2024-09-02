@@ -12,9 +12,9 @@ class Ruang extends CI_Controller
     public function index()
     {
         $data['ruang'] = $this->Mod_backend->get_ruang();
-        $this->load->view('backend/partials/header');
-        $this->load->view('backend/ruang/view', $data);
-        $this->load->view('backend/partials/footer');
+        $this->load->view('admin/partials/header');
+        $this->load->view('admin/frontend/ruang/view', $data);
+        $this->load->view('admin/partials/footer');
         $this->check_login(); // Ensure user is logged in
     }
 
@@ -29,9 +29,9 @@ class Ruang extends CI_Controller
 
     public function add_view()
     {
-        $this->load->view('backend/partials/header');
-        $this->load->view('backend/ruang/add');
-        $this->load->view('backend/partials/footer');
+        $this->load->view('admin/partials/header');
+        $this->load->view('admin/frontend/ruang/add');
+        $this->load->view('admin/partials/footer');
     }
 
     public function add()

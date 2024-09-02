@@ -120,6 +120,31 @@
                     <span>S1 (ST1)</span></a>
             </li>
 
+            <div class="sidebar-heading">
+                Kelola Jadwal dan Mading
+            </div>
+
+            <!-- Nav Item - jadwal_rg -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'jadwal_rg' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('jadwal') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Input Jadwal Ruang</span></a>
+            </li>
+
+            <!-- Nav Item - ruang -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'ruang' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('ruang') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Input Ruang</span></a>
+            </li>
+
+            <!-- Nav Item - mading -->
+            <li class="nav-item <?= $this->uri->segment(1) == 'mading' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('admin_mading') ?>">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Input Mading</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

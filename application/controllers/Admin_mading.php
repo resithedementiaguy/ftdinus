@@ -12,9 +12,9 @@ class Admin_mading extends CI_Controller
     public function index()
     {
         $data['mading'] = $this->Mod_backend->get_mading();
-        $this->load->view('backend/partials/header');
-        $this->load->view('backend/mading/view', $data);
-        $this->load->view('backend/partials/footer');
+        $this->load->view('admin/partials/header');
+        $this->load->view('admin/frontend/mading/view', $data);
+        $this->load->view('admin/partials/footer');
         $this->check_login(); // Ensure user is logged in
     }
 
@@ -29,9 +29,9 @@ class Admin_mading extends CI_Controller
 
     public function add_view()
     {
-        $this->load->view('backend/partials/header');
-        $this->load->view('backend/mading/add');
-        $this->load->view('backend/partials/footer');
+        $this->load->view('admin/partials/header');
+        $this->load->view('admin/frontend/mading/add');
+        $this->load->view('admin/partials/footer');
     }
 
     public function add()
