@@ -1,71 +1,62 @@
-<div class="page-heading">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Daftar Jadwal</h3>
-                <p class="text-subtitle text-muted">Daftar data untuk Jadwal</p>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-primary font-weight-bold">Daftar Jadwal</h1>
+    <h6 class="h6 mb-3 text-black">Daftar data untuk Jadwal</h6>
+
+    <!-- DataTales Example -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header py-3">
+            <div class="text-right">
+                <a href="<?= base_url('jadwal/add_view') ?>" class="btn btn-primary shadow-md mr-2">
+                    <i class="bi bi-plus-circle"></i> Tambah Jadwal
+                </a>
             </div>
-            <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Jadwal Ruang</li>
-                    </ol>
-                </nav>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr class="table table-primary text-dark">
+                            <th>No</th>
+                            <th>Kode Ruang</th>
+                            <th>Kegiatan</th>
+                            <th>Waktu Mulai</th>
+                            <th>Waktu Selesai</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($jadwal)) : ?>
+                            <?php $no = 1;
+                            foreach ($jadwal as $jadwal) : ?>
+                                <tr>
+                                    <td class="py-3"><?php echo $no++; ?></td>
+                                    <td><?= $jadwal->kd_ruang ?></td>
+                                    <td><?= $jadwal->kegiatan ?></td>
+                                    <td><?= formatDate($jadwal->start_time) ?></td>
+                                    <td><?= formatDate($jadwal->end_time) ?></td>
+                                    <td><?= $jadwal->deskripsi ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <tr>
+                                <td colspan="6">Tidak ada jadwal ruang.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    <br>
 
-    <section class="section">
-        <div class="d-flex justify-content-end mb-3">
-            <a href="<?= base_url('jadwal/add_view') ?>" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> Tambah Jadwal
-            </a>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table" id="table1">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Kode Ruang</th>
-                                <th>Kegiatan</th>
-                                <th>Waktu Mulai</th>
-                                <th>Waktu Selesai</th>
-                                <th>Deskripsi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($jadwal)) : ?>
-                                <?php $no = 1;
-                                foreach ($jadwal as $jadwal) : ?>
-                                    <tr>
-                                        <td class="py-3"><?php echo $no++; ?></td>
-                                        <td><?= $jadwal->kd_ruang ?></td>
-                                        <td><?= $jadwal->kegiatan ?></td>
-                                        <td><?= formatDate($jadwal->start_time) ?></td>
-                                        <td><?= formatDate($jadwal->end_time) ?></td>
-                                        <td><?= $jadwal->deskripsi ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else : ?>
-                                <tr>
-                                    <td colspan="6">Tidak ada jadwal ruang.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
+<!-- /.container-fluid -->
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        $('#table1').DataTable();
+        $('#dataTable').DataTable();
     });
 </script>
 

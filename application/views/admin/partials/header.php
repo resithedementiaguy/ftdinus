@@ -64,6 +64,13 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                CPL
+            </div>
+
             <!-- Nav Item - Program Studi -->
             <li class="nav-item <?= $this->uri->segment(1) == 'program_studi' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('program_studi') ?>">
@@ -120,12 +127,15 @@
                     <span>S1 (ST1)</span></a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
             <div class="sidebar-heading">
                 Kelola Jadwal dan Mading
             </div>
 
             <!-- Nav Item - jadwal_rg -->
-            <li class="nav-item <?= $this->uri->segment(1) == 'jadwal_rg' ? 'active' : '' ?>">
+            <li class="nav-item <?= $this->uri->segment(1) == 'jadwal' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('jadwal') ?>">
                     <i class="fas fa-fw fa-chart-line"></i>
                     <span>Input Jadwal Ruang</span></a>
@@ -139,7 +149,7 @@
             </li>
 
             <!-- Nav Item - mading -->
-            <li class="nav-item <?= $this->uri->segment(1) == 'mading' ? 'active' : '' ?>">
+            <li class="nav-item <?= $this->uri->segment(1) == 'admin_mading' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin_mading') ?>">
                     <i class="fas fa-fw fa-chart-line"></i>
                     <span>Input Mading</span></a>

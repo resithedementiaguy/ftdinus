@@ -1,68 +1,58 @@
-<div class="page-heading">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Daftar Ruang</h3>
-                <p class="text-subtitle text-muted">Daftar data untuk Ruang</p>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-primary font-weight-bold">Daftar Ruang</h1>
+    <h6 class="h6 mb-3 text-black">Daftar data untuk Ruang</h6>
+
+    <!-- DataTales Example -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header py-3">
+            <div class="text-right">
+                <a href="<?= base_url('ruang/add_view') ?>" class="btn btn-primary shadow-md mr-2">
+                    <i class="bi bi-plus-circle"></i> Tambah Ruang
+                </a>
             </div>
-            <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Ruang</li>
-                    </ol>
-                </nav>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr class="table table-primary text-dark">
+                            <th>No</th>
+                            <th>Kode Ruang</th>
+                            <th>Nama Ruang</th>
+                            <th>Kapasitas Kuliah</th>
+                            <th>Kapasitas Ujian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($ruang)) : ?>
+                            <?php $no = 1; foreach ($ruang as $ruang) : ?>
+                                <tr>
+                                    <td class="py-3"><?php echo $no++; ?></td>
+                                    <td><?= $ruang->kd_ruang ?></td>
+                                    <td><?= $ruang->nama ?></td>
+                                    <td><?= $ruang->kap_kuliah ?></td>
+                                    <td><?= $ruang->kap_ujian ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <tr>
+                                <td colspan="5">Tidak ada data ruang.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    <br>
 
-    <section class="section">
-        <div class="d-flex justify-content-end mb-3">
-            <a href="<?= base_url('ruang/add_view') ?>" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> Tambah Ruang
-            </a>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table" id="table1">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Kode Ruang</th>
-                                <th>Nama Ruang</th>
-                                <th>Kapasitas Kuliah</th>
-                                <th>Kapasitas Ujian</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($ruang)) : ?>
-                                <?php $no = 1;
-                                foreach ($ruang as $ruang) : ?>
-                                    <tr>
-                                        <td class="py-3"><?php echo $no++; ?></td>
-                                        <td><?= $ruang->kd_ruang ?></td>
-                                        <td><?= $ruang->nama ?></td>
-                                        <td><?= $ruang->kap_kuliah ?></td>
-                                        <td><?= $ruang->kap_ujian ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else : ?>
-                                <tr>
-                                    <td colspan="5">Tidak ada data ruang.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
+<!-- /.container-fluid -->
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        $('#table1').DataTable();
+        $('#dataTable').DataTable();
     });
 </script>

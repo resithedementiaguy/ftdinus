@@ -13,6 +13,7 @@ class Jadwal extends CI_Controller
     {
         $data['jadwal'] = $this->Mod_backend->get_jadwal();
         $this->load->view('admin/partials/header');
+        $this->load->view('admin/partials/topbar');
         $this->load->view('admin/frontend/jadwal/view', $data);
         $this->load->view('admin/partials/footer');
         $this->check_login(); // Ensure user is logged in
@@ -30,6 +31,7 @@ class Jadwal extends CI_Controller
     public function add_view()
     {
         $this->load->view('admin/partials/header');
+        $this->load->view('admin/partials/topbar');
         $this->load->view('admin/frontend/jadwal/add');
         $this->load->view('admin/partials/footer');
     }

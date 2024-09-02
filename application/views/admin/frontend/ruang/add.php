@@ -1,82 +1,40 @@
-<div class="page-heading">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Input Jadwal</h3>
-                <p class="text-subtitle text-muted">Silahkan isi form di bawah untuk input ruang</p>
-            </div>
-            <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Ruang</li>
-                    </ol>
-                </nav>
-            </div>
+<div class="container-fluid px-5">
+    <h1 class="h3 mb-2 text-primary font-weight-bold">Input Ruang</h1>
+    <h6 class="h6 mb-3 text-black">Silahkan isi form di bawah untuk input ruang.</h6>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <?php if (validation_errors()) : ?>
+                <div class="alert alert-danger">
+                    <?= validation_errors() ?>
+                </div>
+            <?php endif; ?>
+            <form action="<?= base_url('ruang/add') ?>" method="POST">
+                <div class="form-group mb-4">
+                    <h6>Kode Ruang</h6>
+                    <input type="text" id="kd_ruang" name="kd_ruang" class="form-control" placeholder="Masukkan kode ruang (e.g. i.1.3)" autocomplete="off" required>
+                </div>
+                <div class="form-group mb-4">
+                    <h6>Nama Ruang</h6>
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama ruang (e.g. Ruang Rapat atau Ruang Kelas)" autocomplete="off" required>
+                </div>
+                <div class="form-group mb-4">
+                    <h6>Kapasitas Kuliah</h6>
+                    <input type="number" id="kap_kuliah" name="kap_kuliah" class="form-control" placeholder="Kapasitas Kuliah" required>
+                </div>
+                <div class="form-group mb-4">
+                    <h6>Kapasitas Ujian</h6>
+                    <input type="number" id="kap_ujian" name="kap_ujian" class="form-control" placeholder="Kapasitas Ujian" required>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a href="<?= base_url('ruang') ?>" class="btn btn-secondary">Kembali</a>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
         </div>
     </div>
-
-    <section id="basic-horizontal-layouts">
-        <div class="row match-height">
-            <div class="col-md-12 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <?php if (validation_errors()) : ?>
-                                <div class="alert alert-danger">
-                                    <?= validation_errors() ?>
-                                </div>
-                            <?php endif; ?>
-                            <form class="form form-horizontal" id="ruangForm" action="<?= base_url('ruang/add') ?>" method="POST">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div>
-                                            <h5 class="h5 mb-4">Informasi Ruang</h5>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label for="kd_ruang">Kode Ruang</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="text" id="kd_ruang" class="form-control" name="kd_ruang" placeholder="masukkan kode ruang (e.g. i.1.3)" required>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label for="nama">Nama Ruang</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="text" id="nama" class="form-control" name="nama" placeholder="masukkan nama ruang (e.g. Ruang Rapat atau Ruang Kelas)" required>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label for="kap_kuliah">Kapasitas Kuliah</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="number" id="kap_kuliah" class="form-control" name="kap_kuliah" placeholder="Kapasitas Kuliah" required>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <label for="kap_ujian">Kapasitas Ujian</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="number" id="kap_ujian" class="form-control" name="kap_ujian" placeholder="Kapasitas Ujian" required>
-                                        </div>
-
-                                        <div class="col-sm-12 d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-primary me-1 mb-1 px-5">Simpan</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
-<!-- Modal berhasil  -->
+<!-- Modal berhasil -->
 <div class="modal modal-borderless fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
