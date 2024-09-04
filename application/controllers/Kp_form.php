@@ -1,14 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 //Include autoloader dari Composer
 require 'dompdf/vendor/autoload.php';
 
 use Dompdf\Dompdf;
 
-class Kp_form extends CI_Controller {
+class Kp_form extends CI_Controller
+{
 
-    public function generate_pdf() {
+    public function generate_pdf()
+    {
         // Buat instance Dompdf
         $dompdf = new Dompdf();
 
@@ -28,10 +30,11 @@ class Kp_form extends CI_Controller {
         $dompdf->stream("form_kp.pdf", array("Attachment" => 0));
     }
 
-    public function print_kp() {
+    public function print_kp()
+    {
         // Set the content type to PDF
         // header("Content-type: application/pdf");
-        
+
         // Load the view
         $this->load->view('pdf/kp_form');
     }
