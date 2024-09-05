@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<?php
-/*defined('BASEPATH') OR exit('No direct script access allowed');
-
-$pdf = new FPDF();
-$pdf->AddPage();*/
-?>
 <html lang="en">
 
 <head>
@@ -12,7 +6,7 @@ $pdf->AddPage();*/
     <style>
         body {
             font-family: 'Times New Roman', serif;
-            font-size: 12px;
+            font-size: 14px;
         }
 
         p {
@@ -31,7 +25,6 @@ $pdf->AddPage();*/
             clear: both;
         }
 
-
         .header img,
         .header .text-container {
             display: inline-block;
@@ -41,18 +34,6 @@ $pdf->AddPage();*/
         .header img {
             max-height: 100px;
             margin-right: 20px;
-        }
-
-        .header img {
-            max-height: 100px;
-            /* Gantilah sesuai kebutuhan */
-            margin-right: 20px;
-            /* Gantilah sesuai kebutuhan */
-        }
-
-        .header .text-container {
-            text-align: center;
-            flex-grow: 1;
         }
 
         .sub-header {
@@ -96,6 +77,25 @@ $pdf->AddPage();*/
             display: inline-block;
             width: 250px;
         }
+
+        .box {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid black;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid black;
+            margin-right: 5px;
+            vertical-align: middle;
+            border-radius: 50px;
+        }
     </style>
 </head>
 
@@ -107,8 +107,10 @@ $pdf->AddPage();*/
                     <?php
                     $path = base_url('assets/img/logo_dinus.png');
                     $type = pathinfo($path, PATHINFO_EXTENSION);
-                    $data = file_get_contents($path);
-                    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                    if (!isset($base64)) {
+                        $data = file_get_contents($path);
+                        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                    }
                     ?>
                     <img src="<?= $base64 ?>" alt="Logo" />
                 </td>
@@ -135,7 +137,7 @@ $pdf->AddPage();*/
     <table class="table no-border" style="font-weight: bold;">
         <tr>
             <td style="width: 70px;">Nama</td>
-            <td>:</td>
+            <td style="width: 270px;">:</td>
             <td style="width: 70px;">NIM</td>
             <td>:</td>
         </tr>
@@ -145,31 +147,38 @@ $pdf->AddPage();*/
             <td>E-mail</td>
             <td>:</td>
         </tr>
+        <tr>
+            <td>Status KP</td>
+            <td>
+                <p>: <span class="box"></span> PRA-KP (BELUM KRS)</p>
+            </td>
+            <td colspan="2">
+                <p><span class="box"></span> KP (SUDAH KRS)</p>
+            </td>
+        </tr>
     </table>
 
     <table class="table">
         <tr>
             <th>Penanggungjawab</th>
-            <th colspan="2">Keterangan</th>
+            <th colspan="2" style="text-align: center;">Keterangan</th>
             <th>Tanda Tangan Penanggungjawab</th>
         </tr>
         <tr>
             <td>Dosen Wali</td>
             <td>
-                <input type="checkbox" /> <strong>Semester 5</strong> <br />
-                <input type="checkbox" /> min. 90 SKS
-                <strong>(s/d smstr 5)</strong> <br />
-                <input type="checkbox" /> IPK min. 2.00 <br />
-                <input type="checkbox" /> Lulus MK Statistik
+                <span class="circle"></span> Semester 5 <br><br>
+                <span class="box"></span> min. 90 SKS (s/d smstr 5) <br />
+                <span class="box"></span> IPK min. 2.00 <br />
+                <span class="box"></span> Lulus MK Statistik <br>
             </td>
             <td>
-                <input type="checkbox" /> <strong>Semester 6, dst.</strong>
-                <br />
-                <input type="checkbox" /> min. 108 SKS
-                <strong>(s/d smstr 6)</strong> <br />
-                <input type="checkbox" /> IPK min. 2.00 <br />
-                <input type="checkbox" /> Lulus MK Statistik <br />
-                <input type="checkbox" /> Sedang ambil MK Metopel
+                <br>
+                <span class="circle"></span> Semester 6, dst. <br><br>
+                <span class="box"></span> min. 108 SKS (s/d smstr 6) <br />
+                <span class="box"></span> IPK min. 2.00 <br />
+                <span class="box"></span> Lulus MK Statistik <br />
+                <span class="box"></span> Sedang ambil MK Metopel
             </td>
             <td></td>
         </tr>
@@ -181,12 +190,10 @@ $pdf->AddPage();*/
         <tr>
             <td>Dosen Pembimbing</td>
             <td colspan="2">
-                Rencana Lokasi:
-                <br />
+                Rencana Lokasi: <br />
                 ________________________________________
                 <br />
-                Rencana Topik:
-                <br />
+                Rencana Topik: <br />
                 ________________________________________
                 <br />
                 Rencana Waktu Pelaksanaan: __________ s/d __________
@@ -196,35 +203,30 @@ $pdf->AddPage();*/
         <tr>
             <td>Sekretariat</td>
             <td colspan="2">
-                <input type="checkbox" /> Kertas KOP FT dan Amplop FT <br />
-                <input type="checkbox" /> Nomor Surat:
+                <span class="box"></span> Kertas KOP FT dan Amplop FT <br />
+                <span class="box"></span> Nomor Surat:
             </td>
             <td></td>
         </tr>
         <tr>
             <td>Koordinator KP</td>
             <td colspan="2">
-                <input type="checkbox" /> Surat Permohonan ber-KOP Fakultas
-                Teknik (wajib) <br />
-                <input type="checkbox" /> Proposal (opsional, bila
-                perusahaan membutuhkan)
+                <span class="box"></span> Surat Permohonan ber-KOP Fakultas Teknik (wajib) <br />
+                <span class="box"></span> Proposal (opsional, bila perusahaan membutuhkan)
             </td>
             <td></td>
         </tr>
     </table>
-    <p>
-        *Berikan tanda centang (√ ) pada tanda O dan
-        <input type="checkbox" />
-    </p>
 
-    <div class="sign-area d-flex justify-content-end">
+    
+    <p>*Berikan tanda centang (V) pada tanda <span class="circle"></span> dan <span class="box"></span></p>
+
+    <br>
+    <div class="sign-area">
         <div class="text-center">
-            <p class="mb-0">Semarang, <span class="line"></span></p>
-            <br />
-            <br />
-            <br />
-            <br />
-            <p class="mb-0">
+            <p>Semarang, <span class="line"></span></p>
+            <br><br><br><br><br><br>
+            <p>
                 <span class="line"></span>
                 <br />(nama & tanda tangan mahasiswa)
             </p>
@@ -233,6 +235,3 @@ $pdf->AddPage();*/
 </body>
 
 </html>
-<?php
-//$pdf->Output();
-?>
