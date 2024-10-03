@@ -3,14 +3,12 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         <a href="<?= base_url('kp_form/generate_pdf') ?>" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
         </a>
     </div>
-
 
     <!-- Content Row -->
     <div class="row">
@@ -33,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Earnings (Annual) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -97,8 +95,68 @@
         </div>
     </div>
 
-    <!-- Content Row -->
+    <!-- Content Row for CPL Chart -->
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Grafik CPL berdasarkan tahun</h6>
+                    <div>
+                        <button class="btn btn-primary year-button" data-year="2021">2021</button>
+                        <button class="btn btn-primary year-button" data-year="2022">2022</button>
+                        <button class="btn btn-primary year-button" data-year="2023">2023</button>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <canvas id="cplChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- CPL Yearly Data for each year -->
+    <script>
+        const cplData = {
+            '2021': [4, 3, 2, 4, 3, 4, 2, 3, 4, 2],
+            '2022': [2, 4, 4, 3, 4, 2, 3, 2, 4, 4],
+            '2023': [3, 5, 4, 2, 3, 5, 4, 4, 3, 5]
+        };
+
+        const ctx = document.getElementById('cplChart').getContext('2d');
+        let cplChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['CPL 1', 'CPL 2', 'CPL 3', 'CPL 4', 'CPL 5', 'CPL 6', 'CPL 7', 'CPL 8', 'CPL 9', 'CPL 10'],
+                datasets: [{
+                    label: 'CPL Data',
+                    data: cplData['2021'], // Default to 2021 data
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Function to update chart data based on year button pressed
+        document.querySelectorAll('.year-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const year = this.getAttribute('data-year');
+                cplChart.data.datasets[0].data = cplData[year];
+                cplChart.update();
+            });
+        });
+    </script>
+
+    <!-- Content Row -->
     <div class="row">
 
         <!-- Area Chart -->
@@ -106,7 +164,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Grafik CPL berdasarkan tahun</h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -130,21 +188,21 @@
                             data: {
                                 labels: ['CPL 1', 'CPL 2', 'CPL 3', 'CPL 4', 'CPL 5', 'CPL 6', 'CPL 7', 'CPL 8', 'CPL 9', 'CPL 10'],
                                 datasets: [{
-                                        label: '2022',
+                                        label: '2021',
                                         data: [4, 3, 2, 4, 3, 4, 2, 3, 4, 2],
                                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                                         borderColor: 'rgba(54, 162, 235, 1)',
                                         borderWidth: 1
                                     },
                                     {
-                                        label: '2023',
+                                        label: '2022',
                                         data: [2, 4, 4, 3, 4, 2, 3, 2, 4, 4],
                                         backgroundColor: 'rgba(255, 99, 132, 0.6)',
                                         borderColor: 'rgba(255, 99, 132, 1)',
                                         borderWidth: 1
                                     },
                                     {
-                                        label: '2024',
+                                        label: '2023',
                                         data: [3, 5, 4, 2, 3, 5, 4, 4, 3, 5],
                                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                                         borderColor: 'rgba(75, 192, 192, 1)',
@@ -166,65 +224,52 @@
         </div>
     </div>
 
-    <!-- Content Row -->
+    <!-- Content Row for CPL Chart -->
     <div class="row">
-
-        <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
-
-            <!-- Project Card Example -->
+        <!-- CPL 1 Yearly Chart -->
+        <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                <!-- Card Header -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">CPL 1 Yearly Data</h6>
                 </div>
+                <!-- Card Body -->
                 <div class="card-body">
-                    <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6 mb-4">
-
-            <!-- Illustrations -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="<?= base_url('assets/') ?>img/undraw_posting_photo.svg" alt="...">
-                    </div>
-                    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                        constantly updated collection of beautiful svg images that you can use
-                        completely free and without attribution!</p>
-                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                        unDraw &rarr;</a>
+                    <canvas id="cpl1Chart" width="400" height="200"></canvas>
+                    <script>
+                        const ctxCpl1 = document.getElementById('cpl1Chart').getContext('2d');
+                        const cpl1Chart = new Chart(ctxCpl1, {
+                            type: 'bar', // Change this to 'bar' if you want a bar chart
+                            data: {
+                                labels: ['2021', '2022', '2023'], // Updated years
+                                datasets: [{
+                                    label: 'CPL 1 Data',
+                                    data: [10, 20, 30], // Replace with actual data for CPL 1 for the years
+                                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 2,
+                                    fill: false // Set to true if you want to fill the area under the line
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- More charts can be added similarly for CPL 2, CPL 3, etc. -->
+
 </div>
 <!-- /.container-fluid -->
+
 
 <script>
     var options = {
