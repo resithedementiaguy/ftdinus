@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -5,7 +6,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="<?= base_url('kp_form/generate_pdf')?>" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <a href="<?= base_url('kp_form/generate_pdf') ?>" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
             <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
         </a>
     </div>
@@ -121,7 +122,45 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <div id="chart"></div>
+                    <canvas id="cplChart" width="400" height="200"></canvas>
+                    <script>
+                        const ctx = document.getElementById('cplChart').getContext('2d');
+                        const cplChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['CPL 1', 'CPL 2', 'CPL 3', 'CPL 4', 'CPL 5', 'CPL 6', 'CPL 7', 'CPL 8', 'CPL 9', 'CPL 10'],
+                                datasets: [{
+                                        label: '2022',
+                                        data: [4, 3, 2, 4, 3, 4, 2, 3, 4, 2],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    },
+                                    {
+                                        label: '2023',
+                                        data: [2, 4, 4, 3, 4, 2, 3, 2, 4, 4],
+                                        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                                        borderColor: 'rgba(255, 99, 132, 1)',
+                                        borderWidth: 1
+                                    },
+                                    {
+                                        label: '2024',
+                                        data: [3, 5, 4, 2, 3, 5, 4, 4, 3, 5],
+                                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                                        borderColor: 'rgba(75, 192, 192, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
