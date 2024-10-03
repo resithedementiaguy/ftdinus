@@ -13,9 +13,12 @@ class Kp_form extends CI_Controller
     {
         // Buat instance Dompdf
         $dompdf = new Dompdf();
+        $this->load->model('Mod_home');
+        $data['test']='Rhoshandiatellyneshiaunneveshenk Koyaanisquatsiuth Williams';
+        $data['test_1row']='forsen';
 
         // Load view sebagai HTML
-        $html = $this->load->view('pdf/kp_form', [], true); // Pass true to get the output as a string
+        $html = $this->load->view('pdf/kp_form', $data, true); // Pass true to get the output as a string
 
         // Load HTML content ke Dompdf
         $dompdf->loadHtml($html);

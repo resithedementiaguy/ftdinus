@@ -78,6 +78,12 @@
             width: 250px;
         }
 
+        .line2 {
+            border-bottom: 1px solid black;
+            display: inline-block;
+            width: 187px;
+        }
+
         .box {
             display: inline-block;
             width: 7px;
@@ -95,6 +101,15 @@
             margin-right: 5px;
             vertical-align: middle;
             border-radius: 50px;
+        }
+
+        .bold-text-underline {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .text-bold{
+            font-weight: bold;
         }
     </style>
 </head>
@@ -115,8 +130,8 @@
                     <img src="<?= $base64 ?>" alt="Logo" />
                 </td>
                 <td style="text-align: center;">
-                    <h3><strong>FAKULTAS TEKNIK</strong></h3>
-                    <h3><strong>UNIVERSITAS DIAN NUSWANTORO</strong></h3>
+                    <h3 style="font-size: 20px;"><strong>FAKULTAS TEKNIK</strong><br>
+                    <strong>UNIVERSITAS DIAN NUSWANTORO</strong></h3>
                     <p>Jl. Nakula I No. 5-11 Semarang 50131, Telp: (024) 3555628</p>
                 </td>
             </tr>
@@ -126,56 +141,65 @@
     <div class="sub-header">
         <div class="bold-line"></div>
         <div class="light-line"></div>
-        <h4><strong>FORMULIR PENGAJUAN KERJA PRAKTIK</strong></h4>
-        <h4>
+        <h4 style="font-size: 18px;"><strong>FORMULIR PENGAJUAN KERJA PRAKTIK</strong><br>  
             <strong>SEMESTER GANJIL | GENAP TAHUN __________ /
                 __________</strong>
         </h4>
     </div>
 
     <!-- Table without borders -->
-    <table class="table no-border" style="font-weight: bold;">
+    <table class="table no-border" style="font-size:17px;">
         <tr>
-            <td style="width: 70px;">Nama</td>
-            <td style="width: 270px;">:</td>
-            <td style="width: 70px;">NIM</td>
+            <td style="width: 80px; font-weight: bold;">Nama</td>
+            <td style="width: 1px;">:</td>
+            <td style="width: 250px;"><?= $test?></td>
+            <td style="width: 70px; font-weight: bold;">NIM</td>
             <td>:</td>
+            <td></td>
         </tr>
         <tr>
-            <td>Telepon</td>
+            <td style="font-weight: bold;">Telepon</td>
             <td>:</td>
-            <td>E-mail</td>
+            <td><?= $test_1row?></td>
+            <td style="font-weight: bold;">E-mail</td>
             <td>:</td>
+            <td></td>
         </tr>
         <tr>
-            <td>Status KP</td>
+            <td style="font-weight: bold;">Status KP</td>
+            <td>:</td>
             <td>
-                <p>: <span class="box"></span> PRA-KP (BELUM KRS)</p>
+                <p><span class="box"></span> PRA-KP (BELUM KRS)</p>
             </td>
-            <td colspan="2">
+            <td colspan="3">
                 <p><span class="box"></span> KP (SUDAH KRS)</p>
             </td>
         </tr>
     </table>
+    <br>
 
     <table class="table">
         <tr>
-            <th>Penanggungjawab</th>
+            <th style="text-align: center;">Penanggungjawab</th>
             <th colspan="2" style="text-align: center;">Keterangan</th>
-            <th>Tanda Tangan Penanggungjawab</th>
+            <th style="text-align: center; width:120px; ">Tanda Tangan Penanggungjawab</th>
         </tr>
         <tr>
-            <td>Dosen Wali</td>
+            <td style="font-weight: bold;">Dosen Wali</td>
             <td>
-                <span class="circle"></span> Semester 5 <br><br>
-                <span class="box"></span> min. 90 SKS (s/d smstr 5) <br />
+                <div class="bold-text-underline">
+                    <span class="circle"></span> Semester 5
+                </div><br><br>
+                <span class="box"></span> min. 90 SKS <span class="text-bold">(s/d smstr 5)</span> <br />
                 <span class="box"></span> IPK min. 2.00 <br />
                 <span class="box"></span> Lulus MK Statistik <br>
             </td>
             <td>
                 <br>
-                <span class="circle"></span> Semester 6, dst. <br><br>
-                <span class="box"></span> min. 108 SKS (s/d smstr 6) <br />
+                <div class="bold-text-underline">
+                    <span class="circle"></span> Semester 6, dst.
+                </div><br><br>
+                <span class="box"></span> min. 108 SKS <span class="text-bold">(s/d smstr 6)</span> <br />
                 <span class="box"></span> IPK min. 2.00 <br />
                 <span class="box"></span> Lulus MK Statistik <br />
                 <span class="box"></span> Sedang ambil MK Metopel
@@ -183,17 +207,20 @@
             <td></td>
         </tr>
         <tr>
-            <td>Koordinator KP</td>
-            <td colspan="2">Dosen Pembimbing yang ditunjuk:</td>
+            <td style="font-weight: bold;">Koordinator KP</td>
+            <td colspan="2">
+                Dosen Pembimbing yang ditunjuk: <br><br>
+                ________________________________________
+            </td>
             <td></td>
         </tr>
         <tr>
-            <td>Dosen Pembimbing</td>
+            <td style="font-weight: bold;">Dosen Pembimbing</td>
             <td colspan="2">
-                Rencana Lokasi: <br />
+                Rencana Lokasi: <br /><br>
                 ________________________________________
                 <br />
-                Rencana Topik: <br />
+                Rencana Topik: <br /><br>
                 ________________________________________
                 <br />
                 Rencana Waktu Pelaksanaan: __________ s/d __________
@@ -201,18 +228,19 @@
             <td></td>
         </tr>
         <tr>
-            <td>Sekretariat</td>
+            <td style="font-weight: bold;">Sekretariat</td>
             <td colspan="2">
                 <span class="box"></span> Kertas KOP FT dan Amplop FT <br />
-                <span class="box"></span> Nomor Surat:
+                <span class="box"></span> Nomor Surat: <br>
+                ________________________________________
             </td>
             <td></td>
         </tr>
         <tr>
-            <td>Koordinator KP</td>
+            <td style="font-weight: bold;">Koordinator KP</td>
             <td colspan="2">
-                <span class="box"></span> Surat Permohonan ber-KOP Fakultas Teknik (wajib) <br />
-                <span class="box"></span> Proposal (opsional, bila perusahaan membutuhkan)
+                <span class="box"></span> Surat Permohonan ber-KOP Fakultas Teknik <span class="text-bold">(wajib)</span> <br />
+                <span class="box"></span> Proposal (<span class="text-bold">opsional</span>, bila perusahaan membutuhkan)
             </td>
             <td></td>
         </tr>
@@ -224,7 +252,7 @@
     <br>
     <div class="sign-area">
         <div class="text-center">
-            <p>Semarang, <span class="line"></span></p>
+            <p>Semarang, <span class="line2"></span></p>
             <br><br><br><br><br><br>
             <p>
                 <span class="line"></span>
