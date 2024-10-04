@@ -65,6 +65,12 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <li class="nav-item <?= $this->uri->segment(1) == 'cpmk' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('cpmk') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>CPMK</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
