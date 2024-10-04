@@ -36,33 +36,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($cpmk as $data) : ?>
-                            <tr>
-                                <td>
-                                    <?= $data->nama_matkul ?>
-                                </td>
-                                <td>
-                                    <?= $data->cpmk1 ?>
-                                </td>
-                                <td></td>
-                                <td>
-                                    <?= $data->cpmk1 ?>
-                                </td>
-                                <td>
-                                    <?= $data->cpmk2 ?>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <?= $data->cpmk1 ?>
-                                </td>
-                                <td>
-                                    <?= $data->cpmk2 ?>
-                                </td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        <?php endforeach; ?>
+                    <?php foreach ($cpmk as $data) : ?>
+                        <tr>
+                            <td>
+                                <?= $data->nama_matkul ?>
+                            </td>
+                            <td>
+                                <?= $data->cpmk1 ?>
+                            </td>
+                            <td>
+                                <span class="avg" data-cpmk1="<?= $data->cpmk1 ?>" data-cpmk2="<?= $data->cpmk2 ?>"></span>
+                            </td>
+                            <td>
+                                <?= $data->cpmk1 ?>
+                            </td>
+                            <td>
+                                <?= $data->cpmk2 ?>
+                            </td>
+                            <td>
+                                <span class="avg" data-cpmk1="<?= $data->cpmk1 ?>" data-cpmk2="<?= $data->cpmk2 ?>"></span>
+                            </td>
+                            <td>
+                                <span class="avg" data-cpmk1="<?= $data->cpmk1 ?>" data-cpmk3="<?= $data->cpmk3 ?>"></span>
+                            </td>
+                            <td>
+                                <?= $data->cpmk1 ?>
+                            </td>
+                            <td>
+                                <?= $data->cpmk2 ?>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -70,4 +76,26 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const avgElements = document.querySelectorAll(".avg");
+        
+        avgElements.forEach(function(element) {
+            const cpmk1 = parseFloat(element.getAttribute("data-cpmk1"));
+            const cpmk2 = parseFloat(element.getAttribute("data-cpmk2")) || 0;
+            const cpmk3 = parseFloat(element.getAttribute("data-cpmk3")) || 0;
+
+            let average;
+            if (element.hasAttribute("data-cpmk2") && element.hasAttribute("data-cpmk3")) {
+                // For PI-2-4 (average of cpmk1 and cpmk3)
+                average = (cpmk1 + cpmk3) / 2;
+            } else {
+                // For PI-1-2 and PI-2-3 (average of cpmk1 and cpmk2)
+                average = (cpmk1 + cpmk2) / 2;
+            }
+
+            element.textContent = isNaN(average) ? "-" : average.toFixed(2);
+        });
+    });
+</script>
