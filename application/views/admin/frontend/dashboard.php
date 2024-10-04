@@ -124,7 +124,7 @@
             data: {
                 labels: ['CPL 1', 'CPL 2', 'CPL 3', 'CPL 4', 'CPL 5', 'CPL 6', 'CPL 7', 'CPL 8', 'CPL 9', 'CPL 10'],
                 datasets: [{
-                    label: 'CPL Data',
+                    label: '2021',
                     data: cplData['2021'], // Default to 2021 data
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
@@ -145,7 +145,9 @@
             button.addEventListener('click', function() {
                 const year = this.getAttribute('data-year');
                 cplChart.data.datasets[0].data = cplData[year];
+                cplChart.data.datasets[0].label = year;
                 cplChart.update();
+                
 
                 updateCPL1Chart(year);
             });
