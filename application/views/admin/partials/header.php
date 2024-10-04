@@ -28,6 +28,7 @@
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="<?= site_url('assets/') ?>/admin/dist/css/app.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 

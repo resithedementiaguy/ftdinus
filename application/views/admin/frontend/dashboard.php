@@ -1,4 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -208,6 +207,5 @@
             cpl1Chart.update();
         }
     </script>
-    <!-- More charts can be added similarly for CPL 2, CPL 3, etc. -->
 </div>
 <!-- /.container-fluid -->
