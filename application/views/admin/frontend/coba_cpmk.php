@@ -4,14 +4,16 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-primary font-weight-bold">Data CPMK</h1>
     <h6 class="h6 mb-3 text-black">Daftar semua data CPMK</h6>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">TA 2021</a></li>
+            <li class="breadcrumb-item active" aria-current="page">CPMK</li>
+        </ol>
+    </nav>
 
     <!-- DataTales Example -->
     <div class="card shadow-sm mb-4">
-        <div class="card-header py-3">
-            <div class="text-right">
-                <a href="<?= site_url('mtk/create_view') ?>" class="btn btn-primary shadow-md mr-2">Tambah Data</a>
-            </div>
-        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -29,34 +31,45 @@
                             <th colspan="3">CPL 9</th>
                         </tr>
                         <tr class="text-dark">
-                            <th style="white-space: nowrap;">PI-1-1</th>
-                            <th style="white-space: nowrap;">PI-1-2</th>
-                            <th style="white-space: nowrap;">PI-2-1</th>
-                            <th style="white-space: nowrap;">PI-2-2</th>
-                            <th style="white-space: nowrap;">PI-2-3</th>
-                            <th style="white-space: nowrap;">PI-2-4</th>
-                            <th style="white-space: nowrap;">PI-3-1</th>
-                            <th style="white-space: nowrap;">PI-3-2</th>
-                            <th style="white-space: nowrap;">PI-3-3</th>
-                            <th style="white-space: nowrap;">PI-3-4</th>
-                            <th style="white-space: nowrap;">PI-4-1</th>
-                            <th style="white-space: nowrap;">PI-4-2</th>
-                            <th style="white-space: nowrap;">PI-5-1</th>
-                            <th style="white-space: nowrap;">PI-5-2</th>
-                            <th style="white-space: nowrap;">PI-6-1</th>
-                            <th style="white-space: nowrap;">PI-6-2</th>
-                            <th style="white-space: nowrap;">PI-7-1</th>
-                            <th style="white-space: nowrap;">PI-7-2</th>
-                            <th style="white-space: nowrap;">PI-7-3</th>
-                            <th style="white-space: nowrap;">PI-7-4</th>
-                            <th style="white-space: nowrap;">PI-8-1</th>
-                            <th style="white-space: nowrap;">PI-8-2</th>
-                            <th style="white-space: nowrap;">PI-8-3</th>
-                            <th style="white-space: nowrap;">PI-9-1</th>
-                            <th style="white-space: nowrap;">PI-9-2</th>
-                            <th style="white-space: nowrap;">PI-9-3</th>
+                            <th style="white-space: nowrap;">PI-1.1</th>
+                            <th style="white-space: nowrap;">PI-1.2</th>
+                            <th style="white-space: nowrap;">PI-2.1</th>
+                            <th style="white-space: nowrap;">PI-2.2</th>
+                            <th style="white-space: nowrap;">PI-2.3</th>
+                            <th style="white-space: nowrap;">PI-2.4</th>
+                            <th style="white-space: nowrap;">PI-3.1</th>
+                            <th style="white-space: nowrap;">PI-3.2</th>
+                            <th style="white-space: nowrap;">PI-3.3</th>
+                            <th style="white-space: nowrap;">PI-3.4</th>
+                            <th style="white-space: nowrap;">PI-4.1</th>
+                            <th style="white-space: nowrap;">PI-4.2</th>
+                            <th style="white-space: nowrap;">PI-5.1</th>
+                            <th style="white-space: nowrap;">PI-5.2</th>
+                            <th style="white-space: nowrap;">PI-6.1</th>
+                            <th style="white-space: nowrap;">PI-6.2</th>
+                            <th style="white-space: nowrap;">PI-7.1</th>
+                            <th style="white-space: nowrap;">PI-7.2</th>
+                            <th style="white-space: nowrap;">PI-7.3</th>
+                            <th style="white-space: nowrap;">PI-7.4</th>
+                            <th style="white-space: nowrap;">PI-8.1</th>
+                            <th style="white-space: nowrap;">PI-8.2</th>
+                            <th style="white-space: nowrap;">PI-8.3</th>
+                            <th style="white-space: nowrap;">PI-9.1</th>
+                            <th style="white-space: nowrap;">PI-9.2</th>
+                            <th style="white-space: nowrap;">PI-9.3</th>
                         </tr>
                     </thead>
+                    <style>
+                        /* Untuk mewarnai baris secara bergantian */
+                        tbody tr:nth-child(even) {
+                            background-color: white;
+                        }
+
+                        tbody tr:nth-child(odd) {
+                            background-color: #f2f2f2;
+                            /* abu-abu */
+                        }
+                    </style>
                     <tbody>
                         <?php
                         $total_pi_1_1 = 0;
@@ -68,7 +81,7 @@
                                 <td><?= $data->nama_matkul ?></td>
 
                                 <!-- Kondisi untuk mengisi PI-1-1 dengan CPMK yang berbeda untuk setiap mata kuliah -->
-                                <?php if ($data->nama_matkul == 'ELEKTRONIKA I') : ?>
+                                <?php if ($data->nama_matkul == 'ALGORITMA DAN PEMROGRAMAN') : ?>
                                     <td>
                                         <?= $data->cpmk6 ?>
                                         <?php
@@ -76,11 +89,11 @@
                                         $count_pi_1_1++;
                                         ?>
                                     </td>
-                                <?php elseif ($data->nama_matkul == 'FISIKA I') : ?>
+                                <?php elseif ($data->nama_matkul == 'ELEKTRONIKA 1') : ?>
                                     <td>
-                                        <?= $data->cpmk2 ?>
+                                        <?= $data->cpmk4 ?>
                                         <?php
-                                        $total_pi_1_1 += $data->cpmk2;
+                                        $total_pi_1_1 += $data->cpmk4;
                                         $count_pi_1_1++;
                                         ?>
                                     </td>
@@ -89,7 +102,7 @@
                                 <?php endif; ?>
 
                                 <!-- Kondisi untuk mengisi PI-1-2 dengan CPMK yang berbeda untuk setiap mata kuliah -->
-                                <?php if ($data->nama_matkul == 'ELEKTRONIKA I') : ?>
+                                <?php if ($data->nama_matkul == 'ALGORITMA DAN PEMROGRAMAN') : ?>
                                     <td>
                                         <?= $data->cpmk1 ?>
                                         <?php
@@ -97,7 +110,7 @@
                                         $count_pi_1_2++;
                                         ?>
                                     </td>
-                                <?php elseif ($data->nama_matkul == 'FISIKA I') : ?>
+                                <?php elseif ($data->nama_matkul == 'ELEKTRONIKA 1') : ?>
                                     <td>
                                         <?= $data->cpmk6 ?>
                                         <?php
@@ -131,6 +144,7 @@
                                 <td></td> <!-- PI-8-3 -->
                                 <td></td> <!-- PI-9-1 -->
                                 <td></td> <!-- PI-9-2 -->
+                                <td></td> <!-- PI-9-3 -->
                                 <td></td> <!-- PI-9-3 -->
                             </tr>
                         <?php endforeach; ?>
@@ -185,6 +199,8 @@
                             <td></td> <!-- PI-9-1 -->
                             <td></td> <!-- PI-9-2 -->
                             <td></td> <!-- PI-9-3 -->
+                            <td></td> <!-- PI-9-3 -->
+                            <td></td> <!-- PI-9-3 -->
                         </tr>
                         <tr>
                             <td><strong>Total Rata-rata</strong></td>
@@ -218,6 +234,8 @@
                             <td></td> <!-- PI-9-1 -->
                             <td></td> <!-- PI-9-2 -->
                             <td></td> <!-- PI-9-3 -->
+                            <td></td> <!-- PI-9-3 -->
+                            <td></td> <!-- PI-9-3 -->
                         </tr>
                     </tfoot>
                 </table>
@@ -225,35 +243,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const avgElements = document.querySelectorAll(".avg");
-        const avgPi23Elements = document.querySelectorAll(".avg-pi-2-3");
-
-        // Menghitung rata-rata untuk PI-1-2 dan PI-2-4
-        avgElements.forEach(function(element) {
-            const cpmk1 = parseFloat(element.getAttribute("data-cpmk1"));
-            const cpmk2 = parseFloat(element.getAttribute("data-cpmk2")) || 0;
-            const cpmk3 = parseFloat(element.getAttribute("data-cpmk3")) || 0;
-
-            let average;
-            if (element.hasAttribute("data-cpmk2") && element.hasAttribute("data-cpmk3")) {
-                // For PI-2-4 (average of cpmk1 and cpmk3)
-                average = (cpmk1 + cpmk3) / 2;
-            } else {
-                // For PI-1-2 and PI-2-3 (average of cpmk1 and cpmk2)
-                average = (cpmk1 + cpmk2) / 2;
-            }
-
-            element.textContent = isNaN(average) ? "-" : average.toFixed(2);
-        });
-
-        // Menghitung rata-rata untuk PI-2-3 (cpmk3 dan nilai 4)
-        avgPi23Elements.forEach(function(element) {
-            const cpmk3 = parseFloat(element.getAttribute("data-cpmk3")) || 0;
-            const averagePi23 = (cpmk3 + 4) / 2; // Rata-rata cpmk3 dan nilai tetap 4
-            element.textContent = isNaN(averagePi23) ? "-" : averagePi23.toFixed(2);
-        });
-    });
-</script>

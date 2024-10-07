@@ -13,15 +13,10 @@ class Cpmk extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata('logged_in')) {
-            $data['cpmk']=$this->Mod_cpmk->get_cpmk();
-            $this->load->view('admin/partials/header');
-            $this->load->view('admin/partials/topbar');
-            $this->load->view('admin/frontend/coba_cpmk',$data);
-            $this->load->view('admin/partials/footer');
-        } else {
-            echo 'User is not logged in.';
-            redirect('auth');
-        }
+        $data['cpmk'] = $this->Mod_cpmk->get_cpmk();
+        $this->load->view('admin/partials/header');
+        $this->load->view('admin/partials/topbar');
+        $this->load->view('admin/frontend/coba_cpmk', $data);
+        $this->load->view('admin/partials/footer');
     }
 }

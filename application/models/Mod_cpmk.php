@@ -14,9 +14,9 @@ class Mod_cpmk extends CI_Model
     public function get_cpmk()
     {
         // Select the relevant fields from both tables
-        $this->db->select('coba_matkul.nama_matkul, coba_cpmk.cpmk1, coba_cpmk.cpmk2, coba_cpmk.cpmk3, coba_cpmk.cpmk4, coba_cpmk.cpmk5, coba_cpmk.cpmk6');
-        $this->db->from('coba_cpmk');
-        $this->db->join('coba_matkul', 'coba_cpmk.id_matkul = coba_matkul.id');
+        $this->db->select('matakuliah.nama_matkul, cpmk_kumulatif.cpmk1, cpmk_kumulatif.cpmk2, cpmk_kumulatif.cpmk3, cpmk_kumulatif.cpmk4, cpmk_kumulatif.cpmk5, cpmk_kumulatif.cpmk6');
+        $this->db->from('cpmk_kumulatif');
+        $this->db->join('matakuliah', 'cpmk_kumulatif.id_matkul = matakuliah.id');
         
         // Fetch the result
         $query = $this->db->get();
