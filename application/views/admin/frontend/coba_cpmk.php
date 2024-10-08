@@ -6,11 +6,6 @@
     tbody tr:nth-child(odd) {
         background-color: #f2f2f2;
     }
-
-    tbody tr {
-        text-align: center;
-        vertical-align: center;
-    }
 </style>
 
 <div class="container-fluid">
@@ -19,7 +14,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">TA 2021</a></li>
+            <li class="breadcrumb-item"><a href="#">Tahun Ajaran 2021</a></li>
             <li class="breadcrumb-item active" aria-current="page">CPMK</li>
         </ol>
     </nav>
@@ -31,16 +26,16 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="table text-dark">
-                            <th rowspan="2">MATKUL</th>
-                            <th colspan="2">CPL 1</th>
-                            <th colspan="4">CPL 2</th>
-                            <th colspan="4">CPL 3</th>
-                            <th colspan="2">CPL 4</th>
-                            <th colspan="2">CPL 5</th>
-                            <th colspan="2">CPL 6</th>
-                            <th colspan="4">CPL 7</th>
-                            <th colspan="3">CPL 8</th>
-                            <th colspan="3">CPL 9</th>
+                            <th rowspan="2" class="text-center align-middle">MATKUL</th>
+                            <th colspan="2" class="text-center align-middle">CPL 1</th>
+                            <th colspan="4" class="text-center align-middle">CPL 2</th>
+                            <th colspan="4" class="text-center align-middle">CPL 3</th>
+                            <th colspan="2" class="text-center align-middle">CPL 4</th>
+                            <th colspan="2" class="text-center align-middle">CPL 5</th>
+                            <th colspan="2" class="text-center align-middle">CPL 6</th>
+                            <th colspan="4" class="text-center align-middle">CPL 7</th>
+                            <th colspan="3" class="text-center align-middle">CPL 8</th>
+                            <th colspan="3" class="text-center align-middle">CPL 9</th>
                         </tr>
 
                         <tr class="text-dark">
@@ -81,12 +76,25 @@
                         $count_pi_1_2 = 0;
                         foreach ($cpmk as $data) : ?>
                             <tr>
-                                <td><?= $data->nama_matkul ?></td>
+                                <td class="text-start align-middle">
+                                    <?= $data->nama_matkul ?>
+                                </td>
 
                                 <!-- PI-1.1 -->
                                 <?php if ($data->nama_matkul == 'ALGORITMA DAN PEMROGRAMAN') : ?>
                                     <td class="text-center align-middle">
-                                        <?= $data->cpmk6 ?>
+                                        <span class="btn 
+                        <?php
+                                    if ($data->cpmk6 < 2.0) {
+                                        echo 'btn-danger';
+                                    } elseif ($data->cpmk6 < 3.0) {
+                                        echo 'btn-warning';
+                                    } else {
+                                        echo 'btn-success';
+                                    }
+                        ?>">
+                                            <?= $data->cpmk6 ?>
+                                        </span>
                                         <?php
                                         $total_pi_1_1 += $data->cpmk6;
                                         $count_pi_1_1++;
@@ -94,7 +102,18 @@
                                     </td>
                                 <?php elseif ($data->nama_matkul == 'ELEKTRONIKA 1') : ?>
                                     <td class="text-center align-middle">
-                                        <?= $data->cpmk4 ?>
+                                        <span class="btn 
+                        <?php
+                                    if ($data->cpmk4 < 2.0) {
+                                        echo 'btn-danger';
+                                    } elseif ($data->cpmk4 < 3.0) {
+                                        echo 'btn-warning';
+                                    } else {
+                                        echo 'btn-success';
+                                    }
+                        ?>">
+                                            <?= $data->cpmk4 ?>
+                                        </span>
                                         <?php
                                         $total_pi_1_1 += $data->cpmk4;
                                         $count_pi_1_1++;
@@ -107,7 +126,18 @@
                                 <!-- PI-1.2 -->
                                 <?php if ($data->nama_matkul == 'ALGORITMA DAN PEMROGRAMAN') : ?>
                                     <td class="text-center align-middle">
-                                        <?= $data->cpmk1 ?>
+                                        <span class="btn 
+            <?php
+                                    if ($data->cpmk1 < 2.0) {
+                                        echo 'btn-danger';
+                                    } elseif ($data->cpmk1 < 3.0) {
+                                        echo 'btn-warning';
+                                    } else {
+                                        echo 'btn-success';
+                                    }
+            ?>">
+                                            <?= $data->cpmk1 ?>
+                                        </span>
                                         <?php
                                         $total_pi_1_2 += $data->cpmk1;
                                         $count_pi_1_2++;
@@ -115,7 +145,18 @@
                                     </td>
                                 <?php elseif ($data->nama_matkul == 'ELEKTRONIKA 1') : ?>
                                     <td class="text-center align-middle">
-                                        <?= $data->cpmk6 ?>
+                                        <span class="btn 
+            <?php
+                                    if ($data->cpmk6 < 2.0) {
+                                        echo 'btn-danger';
+                                    } elseif ($data->cpmk6 < 3.0) {
+                                        echo 'btn-warning';
+                                    } else {
+                                        echo 'btn-success';
+                                    }
+            ?>">
+                                            <?= $data->cpmk6 ?>
+                                        </span>
                                         <?php
                                         $total_pi_1_2 += $data->cpmk6;
                                         $count_pi_1_2++;
@@ -180,13 +221,21 @@
                     <tfoot>
                         <!-- Rata-rata per PI -->
                         <tr>
-                            <td><strong>Rata-rata</strong></td>
+                            <td class="text-start align-middle"><strong>Rata-rata</strong></td>
                             <!-- PI-1.1 -->
                             <td class="text-center align-middle">
                                 <?php
                                 if ($count_pi_1_1 > 0) {
                                     $avg_pi_1_1 = $total_pi_1_1 / $count_pi_1_1;
-                                    echo number_format($avg_pi_1_1, 2);
+                                    $btn_class = '';
+                                    if ($avg_pi_1_1 < 2.0) {
+                                        $btn_class = 'btn-danger';
+                                    } elseif ($avg_pi_1_1 < 3.0) {
+                                        $btn_class = 'btn-warning';
+                                    } else {
+                                        $btn_class = 'btn-success';
+                                    }
+                                    echo "<span class='btn $btn_class'>" . number_format($avg_pi_1_1, 2) . "</span>";
                                 } else {
                                     echo '-';
                                 }
@@ -198,7 +247,15 @@
                                 <?php
                                 if ($count_pi_1_2 > 0) {
                                     $avg_pi_1_2 = $total_pi_1_2 / $count_pi_1_2;
-                                    echo number_format($avg_pi_1_2, 2);
+                                    $btn_class = '';
+                                    if ($avg_pi_1_2 < 2.0) {
+                                        $btn_class = 'btn-danger';
+                                    } elseif ($avg_pi_1_2 < 3.0) {
+                                        $btn_class = 'btn-warning';
+                                    } else {
+                                        $btn_class = 'btn-success';
+                                    }
+                                    echo "<span class='btn $btn_class'>" . number_format($avg_pi_1_2, 2) . "</span>";
                                 } else {
                                     echo '-';
                                 }
@@ -257,12 +314,26 @@
 
                         <!-- Total Rata-rata CPL -->
                         <tr>
-                            <td><strong>Total Rata-rata</strong></td>
+                            <td class="text-start align-middle"><strong>Total Rata-rata</strong></td>
                             <!-- CPL 1 -->
                             <td colspan="2" class="text-center align-middle">
                                 <?php
-                                $total_cpl1 = ($avg_pi_1_1 + $avg_pi_1_2) / 2;
-                                echo number_format($total_cpl1, 2);
+                                if (isset($avg_pi_1_1) && isset($avg_pi_1_2)) {
+                                    $total_cpl1 = ($avg_pi_1_1 + $avg_pi_1_2) / 2;
+                                    $btn_class = '';
+
+                                    if ($total_cpl1 < 2.0) {
+                                        $btn_class = 'btn-danger';
+                                    } elseif ($total_cpl1 < 3.0) {
+                                        $btn_class = 'btn-warning';
+                                    } else {
+                                        $btn_class = 'btn-success';
+                                    }
+
+                                    echo "<span class='btn $btn_class'>" . number_format($total_cpl1, 2) . "</span>";
+                                } else {
+                                    echo '-';
+                                }
                                 ?>
                             </td>
 
