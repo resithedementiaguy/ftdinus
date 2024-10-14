@@ -21,6 +21,11 @@
 
     <!-- Tabel CPMK -->
     <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <div class="text-right">
+                <a href="<?= site_url('cpmk/pdca') ?>" class="btn btn-primary shadow-md mr-2">Tambah Data</a>
+            </div>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -84,7 +89,7 @@
                                 <?php if ($data->nama_matkul == 'ALGORITMA DAN PEMROGRAMAN') : ?>
                                     <td class="text-center align-middle">
                                         <span class="btn 
-                        <?php
+            <?php
                                     if ($data->cpmk6 < 2.0) {
                                         echo 'btn-danger';
                                     } elseif ($data->cpmk6 < 3.0) {
@@ -92,7 +97,10 @@
                                     } else {
                                         echo 'btn-success';
                                     }
-                        ?>">
+            ?>"
+                                            data-toggle="modal"
+                                            data-target="#ModalCPL"
+                                            data-cpmk="<?= $data->cpmk6 ?>">
                                             <?= $data->cpmk6 ?>
                                         </span>
                                         <?php
@@ -103,7 +111,7 @@
                                 <?php elseif ($data->nama_matkul == 'ELEKTRONIKA 1') : ?>
                                     <td class="text-center align-middle">
                                         <span class="btn 
-                        <?php
+            <?php
                                     if ($data->cpmk4 < 2.0) {
                                         echo 'btn-danger';
                                     } elseif ($data->cpmk4 < 3.0) {
@@ -111,7 +119,10 @@
                                     } else {
                                         echo 'btn-success';
                                     }
-                        ?>">
+            ?>"
+                                            data-toggle="modal"
+                                            data-target="#ModalCPL"
+                                            data-cpmk="<?= $data->cpmk4 ?>">
                                             <?= $data->cpmk4 ?>
                                         </span>
                                         <?php
@@ -135,7 +146,9 @@
                                     } else {
                                         echo 'btn-success';
                                     }
-            ?>">
+            ?>"
+                                            data-toggle="modal"
+                                            data-target="#ModalCPL">
                                             <?= $data->cpmk1 ?>
                                         </span>
                                         <?php
@@ -360,3 +373,33 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCPL" tabindex="-1" role="dialog" aria-labelledby="ModalCPLLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalCPLLabel">Detail CPMK</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-content">CPMK: <span id="cpmk-value"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript untuk mengisi nilai CPMK di modal
+    $('#ModalCPL').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var cpmkValue = button.data('cpmk');
+        var modal = $(this);
+        modal.find('#cpmk-value').text(cpmkValue);
+    });
+</script>
