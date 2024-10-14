@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Print Tabel A4 Landscape</title>
+    <title>PDCA</title>
     <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url('assets/') ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
@@ -25,16 +25,18 @@
 
             table {
                 width: 100%;
-                border-collapse: collapse;
             }
 
             th,
             td {
-                padding: 8px;
                 text-align: center;
-                border: 1px solid black;
                 font-size: 12px;
             }
+        }
+
+        .table td,
+        .table th {
+            padding: 4px;
         }
 
         .kotak {
@@ -51,36 +53,58 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
-                    <td rowspan="5">logo</td>
-                    <td rowspan="5">pdca</td>
-                    <td rowspan="5">pdca</td>
-                    <td rowspan="5">PDCA Analysis Sheet Report Student Outcome Program</td>
-                    <td colspan="2">Dibuat</td>
-                    <td colspan="2">Diketahui</td>
+                    <td rowspan="5"><img src="<?= base_url('assets/img/logo_dinus.png') ?>" width="50" alt=""></td>
+                    <td rowspan="5" style="white-space: nowrap; font-size: 10px;">
+                        <table style="border-collapse: collapse; width: 100%;">
+                            <tr>
+                                <td style="padding: 5px; border: none;">Program Studi</td>
+                                <td style="padding: 5px; border: none;">: Teknik Elektro</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px; border: none;">Fakultas</td>
+                                <td style="padding: 5px; border: none;">: Teknik</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px; border: none;">Universitas</td>
+                                <td style="padding: 5px; border: none;">: Universitas Dian Nuswantoro</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px; border: none;">Tahun Ajaran</td>
+                                <td style="padding: 5px; border: none;">: 2021/2022</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px; border: none;">Title</td>
+                                <td style="padding: 5px; border: none;">: Evaluasi CPL 1</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td rowspan="5" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">PDCA Analysis Sheet Report Student Outcome Program</td>
+                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dibuat</td>
+                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Diketahui</td>
                 </tr>
                 <tr>
-                    <td>Date</td>
-                    <td></td>
-                    <td>Date</td>
-                    <td></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Date</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Date</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
                 </tr>
                 <tr>
-                    <td>Assign</td>
-                    <td></td>
-                    <td>Assign</td>
-                    <td></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; height: 50px;">Assign</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; height: 50px;">Assign</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Nama</td>
-                    <td></td>
-                    <td>Nama</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dr. Ir. Aripin, M.Kom.</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Ir. Heru Agus Santoso, Ph.D</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Kaprodi</td>
-                    <td></td>
-                    <td>Dekan</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Kaprodi Teknik Elektro</td>
+                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dekan Fakultas Teknik</td>
                 </tr>
                 <tr>
                     <td colspan="8">P - PLAN</td>
@@ -415,59 +439,59 @@
     chart.render();
 
     var options = {
-            series: [{
-                name: 'Net Profit',
-                data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-            }, {
-                name: 'Revenue',
-                data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
-            }, {
-                name: 'Free Cash Flow',
-                data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
-            }],
-            chart: {
-                type: 'bar',
-                height: 350
+        series: [{
+            name: 'Net Profit',
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+        }, {
+            name: 'Revenue',
+            data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+        }, {
+            name: 'Free Cash Flow',
+            data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }],
+        chart: {
+            type: 'bar',
+            height: 350
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded'
             },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded'
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-            },
-            yaxis: {
-                title: {
-                    text: '$ (thousands)'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return "$ " + val + " thousands"
-                    }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+        },
+        xaxis: {
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        },
+        yaxis: {
+            title: {
+                text: '$ (thousands)'
+            }
+        },
+        fill: {
+            opacity: 1
+        },
+        tooltip: {
+            y: {
+                formatter: function(val) {
+                    return "$ " + val + " thousands"
                 }
             }
-        };
+        }
+    };
 
-        var chart = new ApexCharts(document.querySelector("#chartperbaikan"), options);
-        chart.render();
+    var chart = new ApexCharts(document.querySelector("#chartperbaikan"), options);
+    chart.render();
 
-        var options = {
+    var options = {
         series: [{
             name: "CPP",
             data: [{
