@@ -16,6 +16,7 @@
                         ?>
                     </select>
                 </div>
+
                 <!-- PLAN -->
                 <h5 class="h5 text-primary font-weight-bold">P - PLAN</h5>
                 <h5 class="h5 mb-3 text-primary font-weight-bold">Data Capaian Pembelajaran Program Studi</h5>

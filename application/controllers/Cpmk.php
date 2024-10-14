@@ -28,4 +28,10 @@ class Cpmk extends CI_Controller
         $this->load->view('admin/frontend/form_cpmk', $data);
         $this->load->view('admin/partials/footer');
     }
+
+    public function cetak()
+    {
+        $data['cpmk'] = $this->Mod_cpmk->get_cpmk();
+        $this->load->view('admin/frontend/cetak_pdca', $data);
+    }
 }
