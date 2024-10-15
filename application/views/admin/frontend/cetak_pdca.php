@@ -228,7 +228,7 @@
                 <td colspan="8" style="border: 2px solid black; color: black;">A - ACTION</td>
             </tr>
             <tr>
-                <td colspan="8">ADSFADS</td>
+                <td colspan="8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officiis blanditiis alias, in et voluptate temporibus similique incidunt iure? Aspernatur accusamus libero nam laboriosam assumenda eos quaerat? Tempora, maxime iusto.</td>
             </tr>
         </tbody>
     </table>
