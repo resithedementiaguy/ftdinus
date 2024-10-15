@@ -23,7 +23,7 @@
     <div class="card shadow-sm mb-4">
         <div class="card-header">
             <div class="text-right">
-                <a href="<?= site_url('cpmk/pdca') ?>" class="btn btn-primary shadow-md mr-2">Tambah Data</a>
+                <a href="<?= site_url('pdca/generate_pdf') ?>" target="_blank" class="btn btn-primary shadow-md mr-2">Tambah Data</a>
             </div>
         </div>
         <div class="card-body">
