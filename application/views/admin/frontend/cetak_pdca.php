@@ -53,61 +53,62 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
-                    <td rowspan="5"><img src="<?= base_url('assets/img/logo_dinus.png') ?>" width="50" alt=""></td>
+                    <td rowspan="5" class="text-center align-middle"><img src="<?= base_url('assets/img/logo_dinus.png') ?>" width="50" alt=""></td>
                     <td rowspan="5" style="white-space: nowrap; font-size: 10px;">
-                        <table style="border-collapse: collapse; width: 100%;">
+                        P-D-C-A
+                        <table style="border-collapse: collapse; width: 100%; margin: 0; padding: 0;">
                             <tr>
-                                <td style="padding: 5px; border: none;">Program Studi</td>
-                                <td style="padding: 5px; border: none;">: Teknik Elektro</td>
+                                <td style="border: none; margin: 0; padding: 0;">Program Studi</td>
+                                <td style="border: none; margin: 0; padding: 0;">: Teknik Elektro</td>
                             </tr>
                             <tr>
-                                <td style="padding: 5px; border: none;">Fakultas</td>
-                                <td style="padding: 5px; border: none;">: Teknik</td>
+                                <td style="border: none; margin: 0; padding: 0;">Fakultas</td>
+                                <td style="border: none; margin: 0; padding: 0;">: Teknik</td>
                             </tr>
                             <tr>
-                                <td style="padding: 5px; border: none;">Universitas</td>
-                                <td style="padding: 5px; border: none;">: Universitas Dian Nuswantoro</td>
+                                <td style="border: none; margin: 0; padding: 0;">Universitas</td>
+                                <td style="border: none; margin: 0; padding: 0;">: Universitas Dian Nuswantoro</td>
                             </tr>
                             <tr>
-                                <td style="padding: 5px; border: none;">Tahun Ajaran</td>
-                                <td style="padding: 5px; border: none;">: 2021/2022</td>
+                                <td style="border: none; margin: 0; padding: 0;">Tahun Ajaran</td>
+                                <td style="border: none; margin: 0; padding: 0;">: 2021/2022</td>
                             </tr>
                             <tr>
-                                <td style="padding: 5px; border: none;">Title</td>
-                                <td style="padding: 5px; border: none;">: Evaluasi CPL 1</td>
+                                <td style="border: none; margin: 0; padding: 0;">Title</td>
+                                <td style="border: none; margin: 0; padding: 0;">: Evaluasi CPL 1</td>
                             </tr>
                         </table>
                     </td>
-                    <td rowspan="5" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">PDCA Analysis Sheet Report Student Outcome Program</td>
-                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dibuat</td>
-                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Diketahui</td>
+                    <td rowspan="5" class="text-center align-middle font-weight-bold" style="white-space: nowrap; font-size: 16px; margin: 0; padding: 0;">PDCA Analysis Sheet Report Student Outcome Program</td>
+                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Dibuat</td>
+                    <td colspan="2" class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Diketahui</td>
                 </tr>
                 <tr>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Date</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Date</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Date</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Date</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
                 </tr>
                 <tr>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; height: 50px;">Assign</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; height: 50px;">Assign</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0; height: 50px;">Assign</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0; height: 50px;">Assign</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
                 </tr>
                 <tr>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dr. Ir. Aripin, M.Kom.</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Ir. Heru Agus Santoso, Ph.D</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Dr. Ir. Aripin, M.Kom.</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Ir. Heru Agus Santoso, Ph.D</td>
                 </tr>
                 <tr>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Kaprodi Teknik Elektro</td>
-                    <td style="white-space: nowrap; font-size: 10px;"></td>
-                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px;">Dekan Fakultas Teknik</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Kaprodi Teknik Elektro</td>
+                    <td style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;"></td>
+                    <td class="text-center align-middle" style="white-space: nowrap; font-size: 10px; margin: 0; padding: 0;">Dekan Fakultas Teknik</td>
                 </tr>
                 <tr>
-                    <td colspan="8">P - PLAN</td>
+                    <td colspan="8" style="border: 2px solid black; color: black;">P - PLAN</td>
                 </tr>
                 <tr>
                     <td colspan="8">
@@ -133,49 +134,49 @@
                             </div>
                         </div>
 
-                        <h6 class="h6 mb-3 text-black font-weight-bold">Root Cause Analysis</h6>
+                        <h5 class="h5 mb-3 text-black font-weight-bold">Root Cause Analysis</h5>
                         <table class="table table-bordered">
                             <tbody>
-                                <tr>
-                                    <td>Problem</td>
-                                    <td>Why 1</td>
-                                    <td>Why 2</td>
-                                    <td>Why 1</td>
-                                    <td>Root Cause</td>
+                                <tr class="bg-primary text-center">
+                                    <td style="border: 2px solid black; color: white;">Problem</td>
+                                    <td style="border: 2px solid black; color: white;">Why 1</td>
+                                    <td style="border: 2px solid black; color: white;">Why 2</td>
+                                    <td style="border: 2px solid black; color: white;">Why 1</td>
+                                    <td class="bg-warning" style="border: 2px solid black; color: black;">Root Cause</td>
                                 </tr>
                                 <tr>
-                                    <td>Baris 2, Kolom 1</td>
-                                    <td>Baris 2, Kolom 2</td>
-                                    <td>Baris 2, Kolom 3</td>
-                                    <td>Baris 2, Kolom 4</td>
-                                    <td rowspan="2">Baris 2, Kolom 5</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime corrupti laborum voluptatem dolorum facere, aliquid eveniet qui cum numquam eos commodi inventore nam odio quod repudiandae maiores deserunt voluptate?</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime corrupti laborum voluptatem dolorum facere, aliquid eveniet qui cum numquam eos commodi inventore nam odio quod repudiandae maiores deserunt voluptate?</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime corrupti laborum voluptatem dolorum facere, aliquid eveniet qui cum numquam eos commodi inventore nam odio quod repudiandae maiores deserunt voluptate?</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime corrupti laborum voluptatem dolorum facere, aliquid eveniet qui cum numquam eos commodi inventore nam odio quod repudiandae maiores deserunt voluptate?</td>
+                                    <td rowspan="2" style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime corrupti laborum voluptatem dolorum facere, aliquid eveniet qui cum numquam eos commodi inventore nam odio quod repudiandae maiores deserunt voluptate?</td>
                                 </tr>
                                 <tr>
-                                    <td>Baris 3, Kolom 1</td>
-                                    <td>Baris 3, Kolom 2</td>
-                                    <td>Baris 3, Kolom 3</td>
-                                    <td>Baris 3, Kolom 4</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit rem facilis porro unde placeat fugit reiciendis accusantium sequi tempora dolore quidem, veritatis, numquam fugiat, pariatur veniam. Ullam nulla explicabo iste!</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit rem facilis porro unde placeat fugit reiciendis accusantium sequi tempora dolore quidem, veritatis, numquam fugiat, pariatur veniam. Ullam nulla explicabo iste!</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit rem facilis porro unde placeat fugit reiciendis accusantium sequi tempora dolore quidem, veritatis, numquam fugiat, pariatur veniam. Ullam nulla explicabo iste!</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit rem facilis porro unde placeat fugit reiciendis accusantium sequi tempora dolore quidem, veritatis, numquam fugiat, pariatur veniam. Ullam nulla explicabo iste!</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <h6 class="h6 mb-3 text-black font-weight-bold">Rancangan Perbaikan</h6>
+                        <h5 class="h5 mb-3 text-black font-weight-bold">Rancangan Perbaikan</h5>
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <td>Problem</td>
-                                    <td>Why 1</td>
+                                    <td class="bg-warning" style="border: 2px solid black; color: black;">Root Cause</td>
+                                    <td class="bg-warning" style="border: 2px solid black; color: black;">Tindakan Perbaikan</td>
                                 </tr>
                                 <tr>
-                                    <td>Baris 2, Kolom 1</td>
-                                    <td>Baris 2, Kolom 2</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consequuntur dolorum nulla ratione harum magnam, facilis incidunt neque quas at doloribus sit commodi cumque soluta fugiat quisquam totam minima ipsum?</td>
+                                    <td style="border: 2px solid black;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis ratione facere nam inventore soluta maxime accusamus alias reprehenderit, rem aperiam, doloribus id nihil odio enim! Explicabo, tempora. Veniam, cum harum.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8">D - DO</td>
+                    <td colspan="8" style="border: 2px solid black; color: black;">D - DO</td>
                 </tr>
                 <tr>
                     <td colspan="8">
@@ -198,18 +199,18 @@
                                     <td>Tanggal</td>
                                 </tr>
                                 <tr>
-                                    <td>Baris 2, Kolom 1</td>
-                                    <td>Baris 2, Kolom 2</td>
-                                    <td>Baris 2, Kolom 2</td>
-                                    <td>Baris 2, Kolom 2</td>
-                                    <td>Baris 2, Kolom 2</td>
+                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, impedit, eveniet incidunt esse quibusdam ducimus, ad itaque quo odio commodi maxime saepe hic sunt ullam dolorem labore! Dignissimos, aliquid unde!</td>
+                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, impedit, eveniet incidunt esse quibusdam ducimus, ad itaque quo odio commodi maxime saepe hic sunt ullam dolorem labore! Dignissimos, aliquid unde!</td>
+                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, impedit, eveniet incidunt esse quibusdam ducimus, ad itaque quo odio commodi maxime saepe hic sunt ullam dolorem labore! Dignissimos, aliquid unde!</td>
+                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, impedit, eveniet incidunt esse quibusdam ducimus, ad itaque quo odio commodi maxime saepe hic sunt ullam dolorem labore! Dignissimos, aliquid unde!</td>
+                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, impedit, eveniet incidunt esse quibusdam ducimus, ad itaque quo odio commodi maxime saepe hic sunt ullam dolorem labore! Dignissimos, aliquid unde!</td>
                                 </tr>
                             </tbody>
                         </table>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8">C - CHECK</td>
+                    <td colspan="8" style="border: 2px solid black; color: black;">C - CHECK</td>
                 </tr>
                 <tr>
                     <td colspan="8">
@@ -224,7 +225,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="8">A - ACTION</td>
+                    <td colspan="8" style="border: 2px solid black; color: black;">A - ACTION</td>
                 </tr>
                 <tr>
                     <td colspan="8">ADSFADS</td>
